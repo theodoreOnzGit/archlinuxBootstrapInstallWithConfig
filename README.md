@@ -143,13 +143,22 @@ pacman -S base-devel git --needed --noconfirm
 
 For zsh, here we are going to use:
 ```zsh
-# finally let's install all the zsh stuff
+# finally let's install all the zsh stuff and give the terminal and pacman nice colors
 pacman -S grml-zsh-config zsh-autosuggestions zsh-completions --needed --noconfirm
 pacman -S zsh-history-substring-substring-search --needed --noconfirm
 pacman -S zsh-syntax-highlighting --needed --noconfirm
 pacman -S zsh-theme-powerlevel10k --needed --noconfirm
 echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+echo 'alias l="ls -aCF"' >>~/.zshrc
+echo 'alias pacman="pacman --color=auto"' >> ~/.zshrc
+exec zsh
 ```
+
+This will enable you to use zsh with nicer colors after you set 
+everything up.
+
+Now once you should also copy the .bashrc and .vimrc from this repo into your ./root folder
+this will enable you vim and use the bash shell with decent colors
 
 
 
