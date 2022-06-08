@@ -128,7 +128,7 @@ pacman-key --populate
 # and update the packages
 
 pacman -S archlinux-keyring --needed --noconfirm
-pacman -Syyu 
+pacman -Syyu --needed --noconfirm
 
 # first thing is to install vim, super important!
 pacman -S vim --needed --noconfirm
