@@ -25,5 +25,8 @@ pacman -S grml-zsh-config zsh-autosuggestions zsh-completions --needed --noconfi
 pacman -S zsh-history-substring-substring-search --needed --noconfirm
 pacman -S zsh-syntax-highlighting --needed --noconfirm
 pacman -S zsh-theme-powerlevel10k --needed --noconfirm
+echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+
+# neofetch
 pacman -S neofetch --needed --noconfirm
 

@@ -108,7 +108,48 @@ can't really do much here.
 
 To make the terminal a little nicer and to enable vim usage,
 
+1. I've included a .bashrc file to add some color and conveneint aliases
+2. I've included a .vimrc file which gives basic numbering
+3. I've added a .zshrc file for convenient aliases too
+4. I've added a script to automate installation of 
+- vim
+- base-devel
+- zsh and a lot of other nice packages
+- git
 
+Just clone this git directory and execute the scripts:
+
+This part helps update pacman and vim:
+```zsh
+pacman-key --init
+pacman-key --populate
+
+# immediately after we must update the keyring and 
+# and update the packages
+
+pacman -S archlinux-keyring --needed --noconfirm
+pacman -Syyu 
+
+# first thing is to install vim, super important!
+pacman -S vim --needed --noconfirm
+```
+
+This part installs base-devel and git
+```zsh
+
+# then let's install base-devel and git
+pacman -S base-devel git --needed --noconfirm 
+```
+
+For zsh, here we are going to use:
+```zsh
+# finally let's install all the zsh stuff
+pacman -S grml-zsh-config zsh-autosuggestions zsh-completions --needed --noconfirm
+pacman -S zsh-history-substring-substring-search --needed --noconfirm
+pacman -S zsh-syntax-highlighting --needed --noconfirm
+pacman -S zsh-theme-powerlevel10k --needed --noconfirm
+echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+```
 
 
 
