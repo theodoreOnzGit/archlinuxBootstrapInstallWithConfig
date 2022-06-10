@@ -30,3 +30,6 @@ echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>~/.zs
 # neofetch
 pacman -S neofetch --needed --noconfirm
 
+
+# to use mkfs.fat we need dosfstools
+pacman -S dosfstools --needed --noconfirm
