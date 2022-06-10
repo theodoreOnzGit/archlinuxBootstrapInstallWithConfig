@@ -33,3 +33,11 @@ pacman -S neofetch --needed --noconfirm
 
 # to use mkfs.fat we need dosfstools
 pacman -S dosfstools --needed --noconfirm
+
+# grub tools
+pacman -S os-prober grub --needed --noconfirm
+
+
+
+
+
