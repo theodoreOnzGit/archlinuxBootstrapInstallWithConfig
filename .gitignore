@@ -2,6 +2,7 @@
 !.gitignore
 !.bashrc
 !bootstrap-pacman-installs.sh
+!*.sh
 !.vimrc
 !LICENSE
 !README.md
