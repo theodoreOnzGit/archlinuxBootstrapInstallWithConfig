@@ -77,3 +77,8 @@ function setupHostname $1 {
 	addToChrootScriptOnMnt "echo $1 >> /etc/hostname"
 
 }
+
+function setupBoot {
+	addToChrootScriptOnMnt "mkinitcpio -P"
+	
+}

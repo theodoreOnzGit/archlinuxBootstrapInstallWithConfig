@@ -7,6 +7,10 @@ function pacstrapBase {
 	pacstrap /mnt linux linux-firmware base --needed --noconfirm
 }
 
+function pacstrapLTSKernels {
+	pacstrap /mnt linux-lts --needed --noconfirm
+}
+
 function pacstrapVim {
 	pacstrap /mnt vim vim-nerdtree vim-latexsuite --needed --noconfirm
 	pacstrap /mnt vim-ultisnips vim-vital --needed --noconfirm
@@ -29,11 +33,15 @@ function pacstrapTools {
 function pacstrapBootTools {
 	pacstrap /mnt dosfstools --needed --noconfirm
 	pacstrap /mnt os-prober grub efibootmgr --needed --noconfirm
+	# install both amd ucode and intel ucode 
+	# this is for multiboot usb
+	pacstrap /mnt amd-ucode intel-ucode
 }
 
 # this pacstraps everything previously
 function pacstrapAll {
 	pacstrapBase
+	pacstrapLTSKernels
 	pacstrapVim
 	pacstrapAndSetupZsh
 	pacstrapTools
