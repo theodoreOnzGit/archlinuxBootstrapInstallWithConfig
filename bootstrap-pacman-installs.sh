@@ -17,12 +17,12 @@ pacman -Syyu --needed --noconfirm
 # first thing is to install vim, super important!
 pacman -S vim --needed --noconfirm
 
-# then let's install base-devel and git
-pacman -S base-devel git --needed --noconfirm
+# then let's install base-devel git and github
+pacman -S base-devel git github-cli --needed --noconfirm
 
 # finally let's install all the zsh stuff
 pacman -S grml-zsh-config zsh-autosuggestions zsh-completions --needed --noconfirm
-pacman -S zsh-history-substring-substring-search --needed --noconfirm
+pacman -S zsh-history-substring-search --needed --noconfirm
 pacman -S zsh-syntax-highlighting --needed --noconfirm
 pacman -S zsh-theme-powerlevel10k --needed --noconfirm
 echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
@@ -35,7 +35,7 @@ pacman -S neofetch --needed --noconfirm
 pacman -S dosfstools --needed --noconfirm
 
 # grub tools
-pacman -S os-prober grub --needed --noconfirm
+pacman -S os-prober grub efibootmgr --needed --noconfirm
 
 
 
