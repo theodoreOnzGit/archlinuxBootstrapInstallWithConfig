@@ -13,5 +13,5 @@ function autoInstallGrub {
 # https://www.atulhost.com/how-to-disable-or-enable-os-prober-from-the-grub
 function enableOSProber {
 	sed -i 's/#GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLEP_OS_PROBER=false/g' /mnt/etc/default/grub
-	arch-chroot /mnt update-grub
+	grub-mkconfig -o /mnt/boot/grub/grub.cfg
 }
