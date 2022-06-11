@@ -6,3 +6,37 @@
 function pacstrapBase {
 	pacstrap /mnt linux linux-firmware base --needed --noconfirm
 }
+
+function pacstrapVim {
+	pacstrap /mnt vim vim-nerdtree vim-latexsuite --needed --noconfirm
+	pacstrap /mnt vim-ultisnips vim-vital --needed --noconfirm
+}
+
+function pacstrapAndSetupZsh {
+	pacstrap /mnt grml-zsh-config zsh-autosuggestions zsh-completions --needed --noconfirm
+	pacstrap /mnt zsh-history-substring-search --needed --noconfirm
+	pacstrap /mnt zsh-syntax-highlighting --needed --noconfirm
+	pacstrap /mnt zsh-theme-powerlevel10k --needed --noconfirm
+	echo 'source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme' >>/mnt/root/.zshrc
+}
+# this function pacstraps important tools, eg base-devel, git etc
+function pacstrapTools {
+	pacstrap /mnt base-devel git github-cli --needed --noconfirm
+	pacstrap /mnt neofetch --needed --noconfirm
+}
+
+# this function pacstraps boot tools
+function pacstrapBootTools {
+	pacstrap /mnt dosfstools --needed --noconfirm
+	pacstrap /mnt os-prober grub efibootmgr --needed --noconfirm
+}
+
+# this pacstraps everything previously
+function pacstrapAll {
+	pacstrapBase
+	pacstrapVim
+	pacstrapAndSetupZsh
+	pacstrapTools
+	pacstrapBootTools
+}
+
