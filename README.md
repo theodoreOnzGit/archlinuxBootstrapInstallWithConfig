@@ -1,5 +1,6 @@
-# archlinuxBootstrapConfig
-A collection of config files to help with arch bootstrap while installing arch from manjaro
+# ArchLinuxBootstrapInstall
+A collection of config files and scripts to help with arch bootstrap 
+while installing arch from manjaro
 
 ## Purpose
 
@@ -158,7 +159,11 @@ This will enable you to use zsh with nicer colors after you set
 everything up.
 
 Now once you should also copy the .bashrc and .vimrc from this repo into your ./root folder
-this will enable you vim and use the bash shell with decent colors
+this will enable you vim and use the bash shell with decent colors.
+
+
+
+
 
 
 
