@@ -40,7 +40,9 @@ function chrootScriptSetupOnMnt {
 	setupBoot
 
 	# then we give it execute permissions
-	chrootExec chmod 755 /root/chroot.sh
+	chrootExec /bin/bash -c "chmod 755 /root/chroot.sh"
+
+	# last but not least, we need to 
 
 	cat /mnt/root/chroot.sh
 
