@@ -5,12 +5,12 @@
 
 # this installs grub on /mnt/boot
 function autoInstallGrub {
-	mount $1 /mnt/boot
+	#mount $1 /mnt/boot
 	grub-install --target=x86_64-efi --efi-directory=/mnt/boot --bootloader-id=archGRUB --boot-directory=/mnt/boot --removable
 	arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 }
 
-echo "new function added: autoInstallGrub (insert efi system partition)"
+echo "new function added: autoInstallGrub"
 
 # https://www.atulhost.com/how-to-disable-or-enable-os-prober-from-the-grub
 function enableOSProber {
