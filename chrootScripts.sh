@@ -39,10 +39,8 @@ function chrootScriptSetupOnMnt {
 	# boot
 	setupBoot
 
-	# then we give it execute permissions
-	chrootExec /bin/bash -c "chmod 755 /root/chroot.sh"
-
-	# last but not least, we need to 
+	# last but not least, we need to set password
+	addToChrootScriptOnMnt "passwd"
 
 	cat /mnt/root/chroot.sh
 
@@ -92,7 +90,7 @@ function setup_enUSLocale {
 	addToChrootScriptOnMnt "echo 'KEYMAP=us' >> /etc/vconsole.conf"
 }
 
-function setupHostname $1 {
+function setupHostname {
 	addToChrootScriptOnMnt "touch /etc/hostname"
 	addToChrootScriptOnMnt "echo $1 >> /etc/hostname"
 

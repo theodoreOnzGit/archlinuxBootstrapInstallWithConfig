@@ -27,6 +27,7 @@ function pacstrapAndSetupZsh {
 function pacstrapTools {
 	pacstrap /mnt base-devel git github-cli --needed --noconfirm
 	pacstrap /mnt neofetch --needed --noconfirm
+	pacstrap /mnt arch-install-scripts --needed --noconfirm
 }
 
 # this function pacstraps boot tools
@@ -38,6 +39,13 @@ function pacstrapBootTools {
 	pacstrap /mnt amd-ucode intel-ucode
 }
 
+function regenerateFstab {
+	# lastly i want to regenerate my fstab, according to archwiki
+	rm -rf /mnt/etc/fstab
+	genfstab -U /mnt
+	genfstab -U /mnt >> /mnt/etc/fstab
+}
+
 # this pacstraps everything previously
 function pacstrapAll {
 	pacstrapBase
@@ -46,5 +54,6 @@ function pacstrapAll {
 	pacstrapAndSetupZsh
 	pacstrapTools
 	pacstrapBootTools
+	regenerateFstab
 }
 

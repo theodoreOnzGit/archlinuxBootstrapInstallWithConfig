@@ -6,7 +6,7 @@
 # this installs grub on /mnt/boot
 function mountAndFormatBootPartition {
 	mkfs.fat -F 32 $1
-	mount $1 /mnt/boot
+	mount --mkdir $1 /mnt/boot
 }
 
 
@@ -37,6 +37,7 @@ function bootRootAndSwapSetup {
 	mountAndFormatRootPartition $1
 	mountAndFormatBootPartition $2
 	swapon $3
+	touch /mnt/etc/fstab
 	genfstab -U /mnt >> /mnt/etc/fstab
 }
 
