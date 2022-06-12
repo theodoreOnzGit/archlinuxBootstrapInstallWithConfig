@@ -35,9 +35,27 @@ function chrootScriptSetupOnMnt {
 	# third is hostname
 	setupHostname archExperiment
 
+	# fourth is to setup 
+	# boot
+	setupBoot
+
+	# then we give it execute permissions
+	chrootExec chmod 755 /root/chroot.sh
+
 	cat /mnt/root/chroot.sh
 
+	echo " "
+	echo "to run the above commands from chroot,"
+	echo "chroot into that system, use chmod 755 on that script"
+	echo "execute that script"
+	
+	
 }
+
+echo "To setup the scripts for timezone, etc on mnt run chrootScriptSetupOntMnt"
+echo "To run that script from chroot"
+echo "chroot into that system, use chmod 755 on that script"
+echo "execute that script"
 
 function addToChrootScriptOnMnt {
 	echo $1 >> /mnt/root/chroot.sh

@@ -7,11 +7,15 @@
 function autoInstallGrub {
 	mount $1 /mnt/boot
 	grub-install --target=x86_64-efi --efi-directory=/mnt/boot --bootloader-id=archGRUB --boot-directory=/mnt/boot --removable
-	grub-mkconfig -o /mnt/boot/grub/grub.cfg
+	arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 }
+
+echo "new function added: autoInstallGrub (insert efi system partition)"
 
 # https://www.atulhost.com/how-to-disable-or-enable-os-prober-from-the-grub
 function enableOSProber {
 	sed -i 's/#GRUB_DISABLE_OS_PROBER=false/GRUB_DISABLEP_OS_PROBER=false/g' /mnt/etc/default/grub
-	grub-mkconfig -o /mnt/boot/grub/grub.cfg
+	arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 }
+
+echo "new function added: enableOSProber"
