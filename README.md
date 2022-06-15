@@ -70,7 +70,8 @@ them carefully.
 
 ## Table of Folders
 
-1.  [bootstrapSetup](./Step0_bootStrapSetup)
+1. [bootstrapSetup](./Step0_bootStrapSetup)
+2. [partitionMountingAndFormatting](./Step1_PartitioningMountingAndFormatting)
 
 # If you just want to setup a bootstrap:
 

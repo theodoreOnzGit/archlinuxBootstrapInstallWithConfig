@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # this file is meant to be sourced, and then you have many functions with
 # which to install arch
