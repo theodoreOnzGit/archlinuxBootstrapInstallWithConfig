@@ -16,7 +16,14 @@ The way to do so is using a bootstrap.
 This repository contains a number of things i found useful
 while installing arch.
 
-### .bashrc file
+
+
+## Useful files
+
+First off, two very useful files for getting things done in shell,
+or command line:
+
+#### .bashrc file
 
 A nice, preset .bashrc file is given with some color settings from
 manjaro. 
@@ -26,7 +33,7 @@ However, it's not as secure.
 
 Edit them as you wish, then copy them in if you want
 
-### .vimrc file
+#### .vimrc file
 
 Also a nice vimrc file. It is set to use vanilla vim with no
 plugins. However, there are my favourite nerdtree settings there.
@@ -35,6 +42,31 @@ This will open a vsplit window, and a terminal.
 
 The colorscheme is slate which is as close to gruvbox as you
 can get without installing gruvbox.
+
+#### scripts 
+
+I also have scripts with accompanying readmes which tell you 
+in detail what the scripts do. And why they are there.
+
+These scripts contain bash functions to help you setup what's
+needed in archlinux. So that you will not be robbed completely
+of the arch experience, but still be able to install things
+without looking for what command to use.
+
+At least from my point of view, i was just setting up scripts
+to make life easier for myself when installing arch from
+command line. 
+
+No installs are needed, just source each sh file.
+
+
+Scripts are located in the folders below.
+And the folders are named as steps because they remind 
+you what you need to do in a particular order.
+
+
+Steps1-4 are crucial for an arch system. So go through
+them carefully.
 
 ## Table of Folders
 
