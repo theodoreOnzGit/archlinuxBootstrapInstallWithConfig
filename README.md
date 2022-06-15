@@ -36,7 +36,7 @@ This will open a vsplit window, and a terminal.
 The colorscheme is slate which is as close to gruvbox as you
 can get without installing gruvbox.
 
-## Table of Contents
+## Table of Folders
 
 1.  [bootstrapSetup](./Step0_bootStrapSetup)
 
