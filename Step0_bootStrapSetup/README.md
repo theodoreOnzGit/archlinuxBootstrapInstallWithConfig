@@ -119,8 +119,8 @@ To make the terminal a little nicer and to enable vim usage,
 - git
 
 Just clone this git directory and execute the scripts:
-
-This part helps update pacman and vim:
+### pacman installs
+#### This part helps update pacman and vim:
 ```zsh
 pacman-key --init
 pacman-key --populate
@@ -135,14 +135,26 @@ pacman -Syyu --needed --noconfirm
 pacman -S vim --needed --noconfirm
 ```
 
-This part installs base-devel and git
+####This part installs base-devel and git
 ```zsh
 
 # then let's install base-devel and git
 pacman -S base-devel git --needed --noconfirm 
 ```
 
-For zsh, here we are going to use:
+#### boot and formatting tools setup
+
+now to install bootloaders and such, we need to install the 
+
+```zsh
+
+# to use mkfs.fat we need dosfstools
+pacman -S dosfstools --needed --noconfirm
+
+# grub tools
+pacman -S os-prober grub efibootmgr --needed --noconfirm
+```
+#### For zsh, here we are going to use:
 ```zsh
 # finally let's install all the zsh stuff and give the terminal and pacman nice colors
 pacman -S grml-zsh-config zsh-autosuggestions zsh-completions --needed --noconfirm
@@ -157,14 +169,25 @@ exec zsh
 
 This will enable you to use zsh with nicer colors after you set 
 everything up.
-
+#### .bashrc and .vimrc setup
 Now once you should also copy the .bashrc and .vimrc from this repo into your ./root folder
 this will enable you vim and use the bash shell with decent colors.
 
+```zsh
+# copy .vimrc and .bashrc to /root/.
+cp ../.vimrc /root/.
+cp ../.bashrc /root/.
+```
 
+#### ranger setup
+now if you are like me and like vim, install ranger
+it will allow you to browse files extremely quickly
+using vim keybindings
 
-
-
+```zsh
+# ranger: a vim like command line file manager
+pacman -S ranger --needed --noconfirm
+```
 
 
 

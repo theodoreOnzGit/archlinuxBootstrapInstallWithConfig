@@ -40,6 +40,10 @@ pacman -S os-prober grub efibootmgr --needed --noconfirm
 # ranger: a vim like command line file manager
 pacman -S ranger --needed --noconfirm
 
+# copy .vimrc and .bashrc to /root/.
+cp ../.vimrc /root/.
+cp ../.bashrc /root/.
+
 
 
 
