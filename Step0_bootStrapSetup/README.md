@@ -188,7 +188,7 @@ using vim keybindings
 # ranger: a vim like command line file manager
 pacman -S ranger --needed --noconfirm
 ```
-
+[Go back to main page](../.)
 
 
 
