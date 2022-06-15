@@ -10,3 +10,4 @@ set tabstop=4
 set shiftwidth=4
 set scrolloff=5
 
+color slate
