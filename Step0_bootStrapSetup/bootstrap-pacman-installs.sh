@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 # this is a pacman install file after we download the correct mirrors and append the correct archlinux keyring
 # if we set up those correctly, using https://archlinux.org/mirrorlist/
@@ -15,7 +15,7 @@ pacman -S archlinux-keyring --needed --noconfirm
 pacman -Syyu --needed --noconfirm
 
 # first thing is to install vim, super important!
-pacman -S vim --needed --noconfirm
+pacman -S vim vim-nerdtree --needed --noconfirm
 
 # then let's install base-devel git and github
 pacman -S base-devel git github-cli --needed --noconfirm
@@ -37,6 +37,8 @@ pacman -S dosfstools --needed --noconfirm
 # grub tools
 pacman -S os-prober grub efibootmgr --needed --noconfirm
 
+# ranger: a vim like command line file manager
+pacman -S ranger --needed --noconfirm
 
 
 
