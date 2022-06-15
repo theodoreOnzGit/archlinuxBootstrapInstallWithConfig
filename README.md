@@ -11,6 +11,37 @@ I have chosen to install it from my
 [existing](https://wiki.archlinux.org/title/Install_Arch_Linux_from_existing_Linux) 
 linux manjaro distribution.
 
+The way to do so is using a bootstrap.
+
+This repository contains a number of things i found useful
+while installing arch.
+
+### .bashrc file
+
+A nice, preset .bashrc file is given with some color settings from
+manjaro. 
+
+Also the xhost setting is set such that one can use docker easily.
+However, it's not as secure.
+
+Edit them as you wish, then copy them in if you want
+
+### .vimrc file
+
+Also a nice vimrc file. It is set to use vanilla vim with no
+plugins. However, there are my favourite nerdtree settings there.
+
+This will open a vsplit window, and a terminal.
+
+The colorscheme is slate which is as close to gruvbox as you
+can get without installing gruvbox.
+
+## Table of Contents
+
+1.  [bootstrapSetup](./Step0_bootStrapSetup/README.md)
+
+# If you just want to setup a bootstrap:
+
 1. Why bootstrap and not a liveCD?
 
 Because I have a working GUI, web browser and network to search through
