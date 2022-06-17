@@ -1,4 +1,5 @@
-#!/bin/zsh
+#!/bin/bash
+
 
 # this file is meant to be sourced, and then you have many functions with
 # which to install arch
@@ -16,13 +17,19 @@ function chrootExec {
 	arch-chroot /mnt $1
 }
 
+function chrootExecScripts {
+
+	chrootExec /root/chroot.sh
+}
 
 function chrootScriptSetupOnMnt {
 
 	# i'm making a script here of the chroot scripts
 	# it will me executed using chrootExec
 	rm -rf /mnt/root/chroot.sh
-	touch /mnt/root/chroot.sh
+	touch /root/chroot.sh
+	chmod 755 /root/chroot.sh
+	mv /root/chroot.sh /mnt/root/chroot.sh
 
 	echo "#!/bin/bash" >> /mnt/root/chroot.sh
 
@@ -45,17 +52,15 @@ function chrootScriptSetupOnMnt {
 	cat /mnt/root/chroot.sh
 
 	echo " "
-	echo "to run the above commands from chroot,"
-	echo "chroot into that system, use chmod 755 on that script"
-	echo "execute that script"
+	echo "To run that script from chroot, use:"
+	echo "chrootExecScripts"
 	
 	
 }
 
 echo "To setup the scripts for timezone, etc on mnt run chrootScriptSetupOntMnt"
-echo "To run that script from chroot"
-echo "chroot into that system, use chmod 755 on that script"
-echo "execute that script"
+echo "To run that script from chroot, use:"
+echo "chrootExecScripts"
 
 function addToChrootScriptOnMnt {
 	echo $1 >> /mnt/root/chroot.sh
