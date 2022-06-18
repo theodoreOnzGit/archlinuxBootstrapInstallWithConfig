@@ -25,6 +25,7 @@ function chrootExec {
 echo "chrootExec [COMMAND] --> execute command from chroot"
 
 function addSudoUser {
+	echo "setting username $1"
 	chrootExec "useradd -m $1"
 	chrootExec "usermod -aG wheel $1"
 	chrootExec "passwd $1"
@@ -41,6 +42,7 @@ function removeUser {
 echo "removeUser [username] --> removes a user, in case something goes wrong"
 
 function addGuestUser {
+	echo "setting username $1"
 	chrootExec "useradd -m $1"
 	chrootExec "passwd $1"
 
