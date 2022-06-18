@@ -99,7 +99,7 @@ function addSimpleVimrc {
 	echoToVimRc 'terminal'
 
 	cp .vimrc /mnt/root/.vimrc
-	mv .vimrc /mnt/home/$1
+	mv .vimrc /mnt/home/$1/.vimrc
 }
 
 echo "addSimpleVimrc [username] --> adds a simple .vimrc file to both the specified user and root"
@@ -175,7 +175,7 @@ function addSimpleBashrc {
 	echoToBashRc 'shopt -s histappend'
 
 	cp .bashrc /mnt/root/.bashrc
-	mv .bashrc /mnt/home/$1
+	mv .bashrc /mnt/home/$1/.bashrc
 
 }
 
