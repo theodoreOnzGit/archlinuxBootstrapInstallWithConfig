@@ -28,8 +28,8 @@ function bootAndRootSetup {
 	genfstab -U /mnt >> /mnt/etc/fstab
 }
 
-echo "use bootAndRootSetup /path/to/root/partition /path/to/boot/partition"
-echo "to format and mount a boot and root partition"
+echo "bootAndRootSetup [/path/to/root/partition] [/path/to/boot/partition]"
+echo "--> to format and mount a boot and root partition"
 
 
 function bootRootAndSwapSetup {
@@ -41,5 +41,5 @@ function bootRootAndSwapSetup {
 	genfstab -U /mnt >> /mnt/etc/fstab
 }
 
-echo "use bootRootAndSwapSetup /path/to/root/partition /path/to/boot/partition /path/to/swap/partition"
+echo "bootRootAndSwapSetup [/path/to/root/partition] [/path/to/boot/partition] [/path/to/swap/partition]"
 echo "to format and mount a boot, swap and root partition"

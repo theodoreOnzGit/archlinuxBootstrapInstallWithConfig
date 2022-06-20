@@ -90,8 +90,6 @@ function addSimpleVimrc {
 	echoToVimRc "set shiftwidth=4"
 	echoToVimRc "set scrolloff=5"
 
-	echoToVimRc "color slate"
-
 	echoToVimRc '" nerdtree settings if you want to enable them'
 	echoToVimRc '" let NERDTreeShowHidden=1'
 	echoToVimRc '" autocmd VimEnter * NERDTree | set number |set relativenumber| wincmd l | wincmd l'
@@ -101,8 +99,10 @@ function addSimpleVimrc {
 	echoToVimRc 'terminal'
 
 	cp .vimrc /mnt/root/.vimrc
+	chown $1:$1 .vimrc
 	mv .vimrc /mnt/home/$1/.vimrc
 }
+
 
 echo "addSimpleVimrc [username] --> adds a simple .vimrc file to both the specified user and root"
 echo "warning, may override existing .vimrc files!"
@@ -177,6 +177,7 @@ function addSimpleBashrc {
 	echoToBashRc 'shopt -s histappend'
 
 	cp .bashrc /mnt/root/.bashrc
+	chown $1:$1 .vimrc
 	mv .bashrc /mnt/home/$1/.bashrc
 
 }
