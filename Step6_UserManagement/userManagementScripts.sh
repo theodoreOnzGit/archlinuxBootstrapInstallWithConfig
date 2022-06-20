@@ -99,8 +99,9 @@ function addSimpleVimrc {
 	echoToVimRc 'terminal'
 
 	cp .vimrc /mnt/root/.vimrc
-	chown $1:$1 .vimrc
 	mv .vimrc /mnt/home/$1/.vimrc
+	chrootExec "chown $1:$1 /home/$1/.vimrc"
+	umount /mnt/dev
 }
 
 
@@ -177,8 +178,9 @@ function addSimpleBashrc {
 	echoToBashRc 'shopt -s histappend'
 
 	cp .bashrc /mnt/root/.bashrc
-	chown $1:$1 .vimrc
 	mv .bashrc /mnt/home/$1/.bashrc
+	chrootExec "chown $1:$1 /home/$1/.bashrc"
+	umount /mnt/dev
 
 }
 
