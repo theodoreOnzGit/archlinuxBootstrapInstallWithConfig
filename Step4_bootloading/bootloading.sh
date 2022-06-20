@@ -10,7 +10,7 @@ function autoInstallGrub {
 	arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 }
 
-echo "new function added: autoInstallGrub"
+echo "autoInstallGrub --> installs grub onto /mnt/boot with EFI"
 
 # https://www.atulhost.com/how-to-disable-or-enable-os-prober-from-the-grub
 function enableOSProber {
@@ -18,4 +18,4 @@ function enableOSProber {
 	arch-chroot /mnt grub-mkconfig -o /boot/grub/grub.cfg
 }
 
-echo "new function added: enableOSProber"
+echo "new function added: enableOSProber [TBD] not really working yet"
