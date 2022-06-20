@@ -99,3 +99,15 @@ echo "dhcpSetup --> sets up dhcp client daemon for dyanmic IP address"
 function pacstrapInstallToMnt {
 	pacstrap /mnt $1 --needed --noconfirm
 }
+
+function autoInstallNetwork {
+	addHostName $1
+	addNetworkManager
+	addSambaDNS
+	dhcpSetup
+	addBlueTooth
+	reflectorSetup
+}
+
+echo "autoInstallNetwork [hostname] --> installs and setups up network with all above"
+ehco "scripts"
