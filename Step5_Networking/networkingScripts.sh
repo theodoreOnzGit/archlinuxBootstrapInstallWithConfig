@@ -110,4 +110,4 @@ function autoInstallNetwork {
 }
 
 echo "autoInstallNetwork [hostname] --> installs and setups up network with all above"
-ehco "scripts"
+echo "scripts"
