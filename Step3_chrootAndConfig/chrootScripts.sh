@@ -49,6 +49,10 @@ function chrootScriptSetupOnMnt {
 	# last but not least, we need to set password
 	addToChrootScriptOnMnt "passwd"
 
+	# some extras: configure pacman conf
+	addToChrootScriptOnMnt "vim /etc/pacman.conf"
+
+
 	cat /mnt/root/chroot.sh
 
 	echo " "
