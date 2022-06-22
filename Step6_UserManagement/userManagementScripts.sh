@@ -133,7 +133,7 @@ function addSimpleBashrc {
 	echoToBashRc 'colors() {'
 	echoToBashRc '	local fgc bgc vals seq0'
 	echoToBashRc ''
-	echoToBashRc '	printf "Color escapes are %s\n" "\e[${value};...;${value}m'
+	echoToBashRc '	printf "Color escapes are %s\n" "\e[${value};...;${value}m"'
 	echoToBashRc '	printf "Values 30..37 are \e[33mforeground colors\e[m\n"'
 	echoToBashRc '	printf "Values 40..47 are \e[43mbackground colors\e[m\n"'
 	echoToBashRc '	printf "Value  1 gives a  \e[1mbold-faced look\e[m\n\n"'
