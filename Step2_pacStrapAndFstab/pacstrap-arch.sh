@@ -52,8 +52,11 @@ function regenerateFstab {
 	rm -rf /mnt/etc/fstab
 	genfstab -U /mnt
 	genfstab -U /mnt >> /mnt/etc/fstab
+	vim /mnt/etc/fstab
 }
-echo "regenerateFstab --> generates /mnt/etc/fstab, please check it for errors"
+echo "regenerateFstab --> generates /mnt/etc/fstab, and brings vim up for you to edit"
+
+
 
 # this pacstraps everything previously
 function pacstrapAll {
