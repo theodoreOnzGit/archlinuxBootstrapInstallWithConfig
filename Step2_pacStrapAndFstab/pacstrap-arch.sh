@@ -39,11 +39,11 @@ echo "pacstrapTools --> neofetch, base-devel, arch-instal scripts"
 
 # this function pacstraps boot tools
 function pacstrapBootTools {
-	pacstrap /mnt dosfstools --needed --noconfirm
+	pacstrap /mnt dosfstools ntfs-3g --needed --noconfirm
 	pacstrap /mnt os-prober grub efibootmgr --needed --noconfirm
 	# install both amd ucode and intel ucode 
 	# this is for multiboot usb
-	pacstrap /mnt amd-ucode intel-ucode
+	pacstrap /mnt amd-ucode intel-ucode --needed --noconfirm
 }
 
 echo "pacstrapBootTools --> stuff neeeded for formatting"
