@@ -34,8 +34,9 @@ pacman -S neofetch --needed --noconfirm
 # to use mkfs.fat we need dosfstools
 pacman -S dosfstools --needed --noconfirm
 
-# grub tools
+# grub tools and ntfs formatter for windows partitions
 pacman -S os-prober grub efibootmgr --needed --noconfirm
+pacman -S ntfs-3g --needed --noconfirm
 
 # ranger: a vim like command line file manager
 pacman -S ranger --needed --noconfirm
