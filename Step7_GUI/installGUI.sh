@@ -26,7 +26,7 @@ echo "chrootExec [COMMAND] --> execute command from chroot"
 
 function InstallDrivers {
 
-	pacman -Ss xf86-video
+	pacstrapInstall -Ss xf86-video
 	pacstrapInstall xorg-drivers
 
 
