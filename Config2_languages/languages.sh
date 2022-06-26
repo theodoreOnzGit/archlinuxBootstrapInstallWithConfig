@@ -13,19 +13,21 @@ function hebrewAdd {
 echo "hebrewAdd --> installs firefox hebrew and adds the locale"
 
 function koreanAdd {
-	pacInstall firefox-i18n-ko
+	pacInstall firefox-i18n-ko ttf-baekmuk adobe-source-han-sans-kr-fonts adobe-source-han-serif-kr-fonts
 	sudo sed -i 's/#ko_KR.UTF-8/ko_KR.UTF-8/g' /etc/locale.gen
 	sudo locale-gen
 }
 
-echo "koreanAdd --> installs firefox korean and adds the locale"
+echo "koreanAdd --> installs firefox korean, fonts and adds the locale"
 
 function chineseAdd {
-	pacInstall firefox-i18n-zh-tw firefox-i18n-zh-cn
+	pacInstall firefox-i18n-zh-tw firefox-i18n-zh-cn \
+		adobe-source-han-serif-cn-fonts \
+		adobe-source-han-serif-tw-fonts
 	sudo sed -i 's/#zh_CN.UTF-8/zh_CN.UTF-8/g' /etc/locale.gen
 	sudo locale-gen
 }
-echo "chineseAdd --> installs firefox chinese and adds the locale"
+echo "chineseAdd --> installs firefox chinese,fonts and adds the locale"
 
 function texliveLangAdd {
 	pacInstall texlive-lang
