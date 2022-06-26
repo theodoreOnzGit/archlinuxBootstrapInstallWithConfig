@@ -30,12 +30,21 @@ echo "installDotnetCore --> installs dotnet Core and asp dotnet core"
 
 
 function bashAndZshAddons {
-	pacInstall bash-completion
+	pacInstall bash-completion htop ranger w3m elinks atool odt2txt ueberzug
+	pacInstall lshw
 }
+echo "bashAndZshAddons --> installs bunch of things useful for terminal"
+
+function aurSetupParu {
+	git clone https://aur.archlinux.org/paru.git
+	cd paru && makepkg -si && cd ..
+}
+echo "aurSetupParu --> sets up the paru aur helper"
 
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
 }
+
 
 echo "pacInstall [packages] --> executes sudo pacman -S --needed --noconfirm"
 
