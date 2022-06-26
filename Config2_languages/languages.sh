@@ -33,7 +33,7 @@ function texliveLangAdd {
 	pacInstall texlive-lang
 }
 
-
+echo "texliveLangAdd --> adds texlive-lang "
 
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
