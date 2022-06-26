@@ -16,8 +16,25 @@ function installVimPack {
 
 echo "installVimPack --> installs vim addons and neovim"
 
+function installVsCodeLatex {
+	pacInstall code texlive-most biber
+}
+
+echo "installVsCodeLatex --> installs vscode with texlive-most for latex-edits"
+
+function installDotnetCore {
+	pacInstall dotnet-runtime dotnet-sdk aspnet-runtime aspnet-targeting-pack
+
+}
+echo "installDotnetCore --> installs dotnet Core and asp dotnet core"
+
+
+function bashAndZshAddons {
+	pacInstall bash-completion
+}
+
 function pacInstall {
-	sudo pacman -S $1 --needed --noconfirm
+	sudo pacman -S $@ --needed --noconfirm
 }
 
 echo "pacInstall [packages] --> executes sudo pacman -S --needed --noconfirm"
