@@ -11,8 +11,11 @@ function webBrowsers {
 echo "webBroswers --> installs firefox addons and chromium"
 
 function installVimPack {
-	pacInstall vim-plugins neovim vim
-	sudo pacman -Rcs vim-coverage-highlight
+	pacInstall vim-plugins neovim vim \
+		ttf-iosevka-nerd \
+		ttf-jetbrains-mono \
+		ttf-nerd-fonts-symbols \
+	#sudo pacman -Rcs vim-coverage-highlight
 }
 
 echo "installVimPack --> installs vim addons and neovim"
