@@ -13,6 +13,13 @@ function steamlib32Install {
 echo "steamlib32Install --> installs the 32 bit version"
 echo "of steam" 
 
+
+function youtubeMusicInstall {
+	paruInstall youtube-music-bin
+}
+
+echo "youtubeMusicInstall --> installs youtube-music-bin from AUR"
+
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
 }
@@ -20,3 +27,7 @@ function pacInstall {
 
 echo "pacInstall [packages] --> executes sudo pacman -S --needed --noconfirm"
 
+function paruInstall {
+	paru -S $@ --needed --noconfirm
+}
+echo "paruInstall [packages] --> executes paru -S --needed --noconfirm"
