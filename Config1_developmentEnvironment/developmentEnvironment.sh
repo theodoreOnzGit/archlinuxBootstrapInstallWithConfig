@@ -18,7 +18,7 @@ function installVimPack {
 echo "installVimPack --> installs vim addons and neovim"
 
 function installVsCodeLatex {
-	pacInstall code texlive-most biber
+	pacInstall code texlive-most biber texlab
 }
 
 echo "installVsCodeLatex --> installs vscode with texlive-most for latex-edits"
