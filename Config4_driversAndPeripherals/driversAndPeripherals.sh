@@ -12,6 +12,20 @@ function keyboardTuxedo {
 echo "keyboardTuxedo --> installs tuxedo control center from AUR"
 echo "linux headers and linux lts headers"
 
+function nvidiaInstallOpen {
+	pacInstall  nvidia-open nvidia-open-dkms \
+		nvidia-settings nvidia-utils \
+		lib32-nvidia-utils
+}
+
+echo "nvidiaInstallOpen --> installs nvidia open source drivers (NOT nouveau)"
+
+function nvidiaInstallClosed {
+	pacInstall  nvidia nvidia-lts \
+		nvidia-settings nvidia-utils \
+		lib32-nvidia-utils
+}
+
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
 }
