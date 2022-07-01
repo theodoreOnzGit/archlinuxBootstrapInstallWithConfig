@@ -12,6 +12,21 @@ function obsStudioInstall {
 echo "obsStudioInstall --> installs obs-studio and some other"
 echo "useful packages for obs"
 
+function whatsappInstall {
+	paruInstall franz
+}
+echo "whatsappInstall --> installs franz, to help have whatsapp"
+
+function zoomInstall {
+	paruInstall zoom
+}
+echo "zoomInstall --> installs zoom from AUR"
+
+function libreOfficeInstall {
+	pacInstall libreoffice-fresh
+}
+echo "libreOfficeInstall --> installs libreoffice using pacman"
+
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
 }
