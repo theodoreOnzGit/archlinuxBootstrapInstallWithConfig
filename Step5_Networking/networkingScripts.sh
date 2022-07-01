@@ -19,7 +19,13 @@ echo "in your installation!"
 echo " "
 echo " "
 function chrootExec {
-	arch-chroot /mnt $1
+	touch chrootExec.sh
+	chmod 755 chrootExec.sh
+	echo $1 >> chrootExec.sh
+	rm -rf /mnt/root/chrootExec.sh
+	mv chrootExec.sh /mnt/root/chrootExec.sh
+	arch-chroot /mnt /root/chrootExec.sh
+	rm -rf /mnt/root/chrootExec.sh
 }
 
 echo "chrootExec [COMMAND] --> execute command from chroot"
@@ -70,7 +76,7 @@ echo "addNetworkManager --> adds the network manager cli and enables it with"
 echo "systemctl enable"
 
 function addBlueTooth {
-	pacstrapInstallToMnt bluez
+	pacstrapInstallToMnt bluez --needed --noconfirm
 
 }
 echo "addBlueTooth --> adds bluetooth package"
