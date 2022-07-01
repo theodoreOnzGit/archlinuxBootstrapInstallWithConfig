@@ -19,7 +19,13 @@ echo "in your installation!"
 echo " "
 echo " "
 function chrootExec {
-	arch-chroot /mnt $1
+	touch chrootExec.sh
+	chmod 755 chrootExec.sh
+	echo $1 >> chrootExec.sh
+	rm -rf /mnt/root/chrootExec.sh
+	mv chrootExec.sh /mnt/root/chrootExec.sh
+	arch-chroot /mnt /root/chrootExec.sh
+	rm -rf /mnt/root/chrootExec.sh
 }
 
 echo "chrootExec [COMMAND] --> execute command from chroot"
@@ -55,5 +61,5 @@ echo "InstallKDE --> installs KDE-plasma and enables sddm service in systemctl"
 
 function pacstrapInstall {
 
-	pacstrap /mnt $1 --needed --noconfirm
+	pacstrap /mnt $@ --needed --noconfirm
 }
