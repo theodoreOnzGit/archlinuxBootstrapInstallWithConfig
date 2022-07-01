@@ -18,7 +18,15 @@ function installVimPack {
 	#sudo pacman -Rcs vim-coverage-highlight
 }
 
+
 echo "installVimPack --> installs vim addons and neovim"
+
+function installPythonPack {
+	pacInstall python jupyter-notebook python2 \
+		python-pip 
+}
+
+echo "installPythonPack --> installs python and jupyter notebook"
 
 function installVsCodeLatex {
 	pacInstall code texlive-most biber texlab
