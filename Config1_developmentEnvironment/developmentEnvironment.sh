@@ -14,7 +14,7 @@ function installVimPack {
 	pacInstall vim-plugins neovim vim \
 		ttf-iosevka-nerd \
 		ttf-jetbrains-mono \
-		ttf-nerd-fonts-symbols \
+		ttf-nerd-fonts-symbols-mono \
 	#sudo pacman -Rcs vim-coverage-highlight
 	installVimAURAddons
 }
@@ -35,7 +35,9 @@ function installVsCodeLatex {
 
 function installVimAURAddons {
 	paru -S vim-youcompleteme-git \
-		vim-gruvbox-git
+		vim-gruvbox-git \
+		ttf-meslo-nerd-font-powerlevel10k
+
 }
 
 
