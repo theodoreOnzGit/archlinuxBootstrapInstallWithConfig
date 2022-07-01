@@ -19,7 +19,7 @@ color slate
 "autocmd VimEnter * NERDTree | set number |set relativenumber| wincmd l | wincmd l
 "
 
-" vim=latex
+" vim-latex settings
 "set grepprg=grep\ -nH\ $*
 "let g:tex_flavor = "latex"
 
