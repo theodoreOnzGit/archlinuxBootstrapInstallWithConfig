@@ -17,6 +17,7 @@ echo "pacstrapLTSKernels --> installs linux-lts"
 function pacstrapVim {
 	pacstrap /mnt vim vim-nerdtree vim-latexsuite --needed --noconfirm
 	pacstrap /mnt vim-ultisnips vim-vital --needed --noconfirm
+	pacstrap /mnt adobe-source-code-pro-fonts --needed --noconfirm
 }
 echo "pacstrapVim --> installs all nice vim stuff"
 
