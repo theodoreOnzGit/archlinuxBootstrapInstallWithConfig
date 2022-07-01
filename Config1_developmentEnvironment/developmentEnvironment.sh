@@ -16,6 +16,7 @@ function installVimPack {
 		ttf-jetbrains-mono \
 		ttf-nerd-fonts-symbols \
 	#sudo pacman -Rcs vim-coverage-highlight
+	installVimAURAddons
 }
 
 
@@ -31,6 +32,12 @@ echo "installPythonPack --> installs python and jupyter notebook"
 function installVsCodeLatex {
 	pacInstall code texlive-most biber texlab
 }
+
+function installVimAURAddons {
+	paru -S vim-youcompleteme-git \
+		vim-gruvbox-git
+}
+
 
 echo "installVsCodeLatex --> installs vscode with texlive-most for latex-edits"
 
