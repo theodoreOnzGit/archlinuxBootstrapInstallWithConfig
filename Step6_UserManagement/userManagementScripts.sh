@@ -19,7 +19,13 @@ echo "in your installation!"
 echo " "
 echo " "
 function chrootExec {
-	arch-chroot /mnt $1
+	touch chrootExec.sh
+	chmod 755 chrootExec.sh
+	echo $1 >> chrootExec.sh
+	rm -rf /mnt/root/chrootExec.sh
+	mv chrootExec.sh /mnt/root/chrootExec.sh
+	arch-chroot /mnt /root/chrootExec.sh
+	rm -rf /mnt/root/chrootExec.sh
 }
 
 echo "chrootExec [COMMAND] --> execute command from chroot"
@@ -58,6 +64,7 @@ function vimSudo {
 	touch vimsudo.sh
 	echo "EDITOR=vim visudo" >> vimsudo.sh
 	chmod 755 vimsudo.sh
+	rm -rf /mnt/root/vimsudo.sh
 	mv vimsudo.sh /mnt/root/vimsudo.sh
 	chrootExec /root/vimsudo.sh
 	rm -rf /mnt/root/vimsudo.sh
@@ -76,6 +83,7 @@ function setupSudoUser {
 echo "setupSudoUser [username] --> executes visudo and adds a sudo user"
 
 function addSimpleVimrc {
+	rm -rf .vimrc
 	touch .vimrc
 
 	echoToVimRc "set relativenumber"
@@ -101,7 +109,6 @@ function addSimpleVimrc {
 	cp .vimrc /mnt/root/.vimrc
 	mv .vimrc /mnt/home/$1/.vimrc
 	chrootExec "chown $1:$1 /home/$1/.vimrc"
-	umount /mnt/dev
 }
 
 
@@ -114,6 +121,7 @@ function echoToVimRc {
 }
 
 function addSimpleBashrc {
+	rm -rf .bashrc
 	touch .bashrc
 
 	echoToBashRc '#!/bin/bash'
@@ -180,7 +188,6 @@ function addSimpleBashrc {
 	cp .bashrc /mnt/root/.bashrc
 	mv .bashrc /mnt/home/$1/.bashrc
 	chrootExec "chown $1:$1 /home/$1/.bashrc"
-	umount /mnt/dev
 
 }
 
