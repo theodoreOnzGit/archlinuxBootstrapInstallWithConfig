@@ -11,7 +11,7 @@ set shiftwidth=4
 set scrolloff=5
 
 color slate
-"color grubox
+"color gruvbox
 
 "let g:UltiSnipsExpandTrigger="<F4>"
 " nerdtree settings if you want to enable them

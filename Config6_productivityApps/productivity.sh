@@ -4,7 +4,9 @@ function obsStudioInstall {
 
 	pacInstall obs-studio
 	paruInstall obs-ndi
-	pacInstall ffnvcodec-headers
+	pacInstall ffnvcodec-headers \
+		libva-intel-driver \
+		libva-mesa-driver
 }
 
 echo "obsStudioInstall --> installs obs-studio and some other"
