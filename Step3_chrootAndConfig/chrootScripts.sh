@@ -91,6 +91,7 @@ function setup_enUSLocale {
 	# LANG=en.US.UTF-8 
 	# to the /etc/locale.conf file
 	# first i remove the /etc/locale.conf file if it exists on /mnt
+	addToChrootScriptOnMnt "locale-gen"
 	
 	rm -rf /etc/locale.conf
 	# then i tell the script to create it and add the info
