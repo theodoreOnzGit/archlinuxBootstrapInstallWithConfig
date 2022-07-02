@@ -59,6 +59,7 @@ echo "bashAndZshAddons --> installs bunch of things useful for terminal"
 function bashAndZshAddonsAUR {
 	paru -S find-the-command --needed 
 	echo "source /usr/share/doc/find-the-command/ftc.zsh" >> ~/.zshrc
+	sudo pacman -Fy
 }
 
 function flatpakInstall() {
