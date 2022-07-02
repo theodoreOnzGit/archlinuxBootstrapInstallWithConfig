@@ -27,6 +27,12 @@ function libreOfficeInstall {
 }
 echo "libreOfficeInstall --> installs libreoffice using pacman"
 
+function vmwareHorizonInstall() {
+	paruInstall vmware-horizon-client
+}
+
+echo "vmwareHorizonInstall --> installs vmware horizon client from AUR"
+
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
 }
