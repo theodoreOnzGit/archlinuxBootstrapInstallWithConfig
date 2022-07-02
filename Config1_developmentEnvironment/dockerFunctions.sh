@@ -33,10 +33,11 @@ dockerRunUbuntu() {
 echo "dockerRunUbuntu --> runs the container named ubuntu"
 
 dockerRunContainer () {
-	sudo docker run -it $1 \
+	sudo docker run -it \
 		-e DISPLAY=$DISPLAY \
 		-v /tmp/.X11-unix:/tmp/.X11-unix \
-		--net=host
+		--net=host \
+		$1
 
 }
 
