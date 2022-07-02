@@ -20,6 +20,13 @@ function installVimPack {
 }
 
 
+function installVimAURAddons {
+	paru -S vim-youcompleteme-git \
+		vim-gruvbox-git \
+		ttf-meslo-nerd-font-powerlevel10k
+
+}
+
 echo "installVimPack --> installs vim addons and neovim"
 
 function installPythonPack {
@@ -33,14 +40,6 @@ function installVsCodeLatex {
 	pacInstall code texlive-most biber texlab
 }
 
-function installVimAURAddons {
-	paru -S vim-youcompleteme-git \
-		vim-gruvbox-git \
-		ttf-meslo-nerd-font-powerlevel10k
-
-}
-
-
 echo "installVsCodeLatex --> installs vscode with texlive-most for latex-edits"
 
 function installDotnetCore {
@@ -52,9 +51,15 @@ echo "installDotnetCore --> installs dotnet Core and asp dotnet core"
 
 function bashAndZshAddons {
 	pacInstall bash-completion htop ranger w3m elinks atool odt2txt ueberzug
-	pacInstall lshw
+	pacInstall lshw 
+	bashAndZshAddonsAUR
 }
 echo "bashAndZshAddons --> installs bunch of things useful for terminal"
+
+function bashAndZshAddonsAUR {
+	paru -S find-the-command --needed 
+	echo "source /usr/share/doc/find-the-command/ftc.zsh" >> ~/.zshrc
+}
 
 function aurSetupParu {
 	git clone https://aur.archlinux.org/paru.git
