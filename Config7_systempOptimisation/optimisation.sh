@@ -15,6 +15,8 @@ echo "with slow IO"
 
 function turnOffBell() {
 	sudo sed -i 's/#set bell-style none/set bell-style none/g' /etc/inputrc
+	#https://wiki.archlinux.org/title/PC_speaker
+	sudo rmmod pcspkr
 }
 
 echo "turnOffBell --> turns off the system beep sound"
