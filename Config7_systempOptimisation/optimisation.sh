@@ -13,6 +13,12 @@ function changeToBfq {
 echo "changeToBfq [sdX] --> changes the scheduler to bfq, good for disks"
 echo "with slow IO"
 
+function turnOffBell() {
+	sudo sed -i 's/#set bell-style none/set bell-style none/g' /etc/inputrc
+}
+
+echo "turnOffBell --> turns off the system beep sound"
+
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
 }
