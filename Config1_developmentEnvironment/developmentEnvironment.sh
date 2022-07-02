@@ -68,6 +68,13 @@ function flatpakInstall() {
 
 echo "flatpakInstall --> installs flatpak "
 
+function dockerInstall() {
+	pacInstall docker
+	sudo systemctl enable docker --now
+	
+}
+echo "dockerInstall --> install docker"
+
 function aurSetupParu {
 	git clone https://aur.archlinux.org/paru.git
 	cd paru && makepkg -si && cd ..
