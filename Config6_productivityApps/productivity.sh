@@ -33,6 +33,12 @@ function vmwareHorizonInstall() {
 
 echo "vmwareHorizonInstall --> installs vmware horizon client from AUR"
 
+function mendeleyInstall() {
+	flatpak install mendeley
+}
+
+echo "mendeleyInstall --> installs mendeley"
+
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
 }
