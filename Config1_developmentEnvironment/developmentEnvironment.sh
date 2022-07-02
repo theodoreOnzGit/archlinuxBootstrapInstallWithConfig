@@ -61,6 +61,12 @@ function bashAndZshAddonsAUR {
 	echo "source /usr/share/doc/find-the-command/ftc.zsh" >> ~/.zshrc
 }
 
+function flatpakInstall() {
+	pacInstall flatpak
+}
+
+echo "flatpakInstall --> installs flatpak "
+
 function aurSetupParu {
 	git clone https://aur.archlinux.org/paru.git
 	cd paru && makepkg -si && cd ..
