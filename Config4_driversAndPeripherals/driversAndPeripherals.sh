@@ -31,6 +31,15 @@ function nvidiaInstallClosed {
 echo "nvidiaInstallClosed --> installs nvidia closed source drivers"
 
 
+function amdInstallOpen {
+	pacInstall mesa lib32-mesa \
+		vulkan-radeon \
+		lib32-vulkan-radeon 
+}
+
+echo "amdInstallOpen --> installs AMD drivers "
+echo "Note: I used this on AMD Raedon Vega Series card "
+
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
 }
