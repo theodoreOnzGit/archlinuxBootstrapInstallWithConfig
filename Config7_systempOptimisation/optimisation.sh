@@ -17,6 +17,9 @@ function turnOffBell() {
 	sudo sed -i 's/#set bell-style none/set bell-style none/g' /etc/inputrc
 	#https://wiki.archlinux.org/title/PC_speaker
 	sudo rmmod pcspkr
+	sudo rm -rf /etc/modprobe.d/nobeep.conf
+	sudo touch /etc/modprobe.d/nobeep.conf
+	sudo echo "blacklist pcspkr" >> /etc/modprobe.d/nobeep.conf
 }
 
 echo "turnOffBell --> turns off the system beep sound"
