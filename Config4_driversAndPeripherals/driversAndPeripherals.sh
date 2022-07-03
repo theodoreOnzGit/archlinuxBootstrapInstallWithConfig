@@ -37,7 +37,7 @@ function amdInstallOpen {
 		lib32-vulkan-radeon 
 }
 
-echo "amdInstallOpen --> installs AMD drivers "
+echo "amdInstallOpen --> installs AMD drivers and vulkan"
 echo "Note: I used this on AMD Raedon Vega Series card "
 
 function pacInstall {
