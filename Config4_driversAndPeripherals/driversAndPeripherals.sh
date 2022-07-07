@@ -40,6 +40,12 @@ function amdInstallOpen {
 echo "amdInstallOpen --> installs AMD drivers and vulkan"
 echo "Note: I used this on AMD Raedon Vega Series card "
 
+printerCupsInstall() {
+	pacInstall cups bluez-cups
+}
+
+echo "printerCupsInstall --> installs cups for printing"
+
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
 }
