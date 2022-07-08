@@ -42,9 +42,18 @@ echo "Note: I used this on AMD Raedon Vega Series card "
 
 printerCupsInstall() {
 	pacInstall cups bluez-cups
+	sudo systemctl start cups
+	sudo systemctl enable cups
 }
 
 echo "printerCupsInstall --> installs cups for printing"
+
+printerCupsRun() {
+	firefox http://localhost:631
+}
+
+echo "printerCupsRun --> runs cups in firefox"
+
 
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
