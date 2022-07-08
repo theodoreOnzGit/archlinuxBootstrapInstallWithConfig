@@ -55,6 +55,13 @@ printerCupsRun() {
 echo "printerCupsRun --> runs cups in firefox"
 
 
+gpuTerminalInstall() {
+	pacInstall alacritty kitty
+}
+
+echo "gpuTerminalInstall --> installs gpu accelerated terminals"
+
+
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
 }
