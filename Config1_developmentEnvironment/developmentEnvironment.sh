@@ -81,6 +81,13 @@ function aurSetupParu {
 }
 echo "aurSetupParu --> sets up the paru aur helper"
 
+paruConfig() {
+	sudo nvim /etc/paru.conf
+}
+
+echo "paruConfig --> edits paru config file with nvim"
+
+
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
 }
