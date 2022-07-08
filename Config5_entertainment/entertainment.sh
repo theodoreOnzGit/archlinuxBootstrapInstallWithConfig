@@ -19,6 +19,15 @@ function youtubeMusicInstall {
 }
 
 echo "youtubeMusicInstall --> installs youtube-music-bin from AUR"
+echo " "
+
+musicAndGuitarAppsInstall() {
+	paruInstall lingot
+}
+
+echo "musicAndGuitarAppsInstall --> installs apps useful for music,"
+echo "eg. lingot for tuning"
+echo " "
 
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
