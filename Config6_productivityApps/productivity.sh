@@ -12,10 +12,19 @@ function obsStudioInstall {
 echo "obsStudioInstall --> installs obs-studio and some other"
 echo "useful packages for obs"
 
-function whatsappInstall {
+function whatsappFranzInstall {
 	paruInstall franz
 }
-echo "whatsappInstall --> installs franz, to help have whatsapp"
+echo "whatsappFranzInstall --> installs franz, to help have whatsapp"
+
+whatsappNativeFierInstall() {
+	paruInstall whatsapp-nativefier
+}
+
+echo "whatsappNativeFierInstall --> installs a nativefier version of "
+echo "whatsapp  (electron)"
+paru -Ss whatsapp-nativefier
+
 
 function zoomInstall {
 	paruInstall zoom
