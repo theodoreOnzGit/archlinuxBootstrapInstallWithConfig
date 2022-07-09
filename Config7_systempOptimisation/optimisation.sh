@@ -24,6 +24,30 @@ function turnOffBell() {
 
 echo "turnOffBell --> turns off the system beep sound"
 
+overscanFixToolsInstall() {
+	pacInstall arandr
+}
+
+echo "overscanFixToolsInstall --> installs arander to fix overscan"
+echo "overscan is when the screen gets cut off on screen corners"
+
+underscanFix() {
+	pacInstall xorg-xrandr
+	xrandr
+	xrandr --output $1 --set underscan on \
+		--set "underscan vborder" $3 \
+		--set "underscan hborder" $2
+	#https://wiki.archlinux.org/title/xrandr#Correction_of_overscan_tv_resolutions_via_the_underscan_property
+}
+
+echo " "
+echo "underscanFix [display name] [horizontal pixels] [vertical pixels]"
+echo "--> fixes overscan if the screen stretches beyond the monitor"
+echo "enter the horizontal and vertical pixels to fix"
+echo "how much border to add to vertical and horizontal pixels"
+echo " "
+
+
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
 }
