@@ -75,6 +75,13 @@ function dockerInstall() {
 }
 echo "dockerInstall --> install docker"
 
+gpuTerminalInstall() {
+	pacInstall alacritty kitty
+}
+
+echo "gpuTerminalInstall --> installs gpu accelerated terminals"
+echo " "
+
 function aurSetupParu {
 	git clone https://aur.archlinux.org/paru.git
 	cd paru && makepkg -si && cd ..
