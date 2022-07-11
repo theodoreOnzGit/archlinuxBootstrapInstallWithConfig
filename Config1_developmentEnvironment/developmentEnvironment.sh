@@ -82,6 +82,19 @@ gpuTerminalInstall() {
 echo "gpuTerminalInstall --> installs gpu accelerated terminals"
 echo " "
 
+alacrittySetup() {
+	rm -rf $HOME/.alacritty.yml
+	cp ./alacritty.yml $HOME/.alacritty.yml
+}
+
+echo "alacrittySetup --> sets up alacritty using config file in"
+echo "current folder"
+echo "WARNING 1: will only work if "
+echo "run from Config1_developmentEnvironment"
+echo "WARNING 2: will delete current alacritty config file"
+echo " "
+
+
 function aurSetupParu {
 	git clone https://aur.archlinux.org/paru.git
 	cd paru && makepkg -si && cd ..
