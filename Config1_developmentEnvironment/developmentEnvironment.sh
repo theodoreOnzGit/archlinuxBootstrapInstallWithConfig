@@ -76,10 +76,12 @@ function dockerInstall() {
 echo "dockerInstall --> install docker"
 
 gpuTerminalInstall() {
-	pacInstall alacritty kitty
+	pacInstall alacritty kitty \
+		tmux
 }
 
 echo "gpuTerminalInstall --> installs gpu accelerated terminals"
+echo "as well as tmux"
 echo " "
 
 alacrittySetup() {
