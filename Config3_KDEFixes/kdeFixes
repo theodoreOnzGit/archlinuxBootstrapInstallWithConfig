@@ -16,6 +16,16 @@ echo "https://forum.manjaro.org/t/add-custom-keyboard-shortcuts-from-terminal/58
 echo "ensure to look for Application Launcher in nvim"
 echo " "
 
+function obsStudioIntelWorkaround {
+	sudo pacman -Rcs xf86-video-intel
+	#https://www.reddit.com/r/artixlinux/comments/sq2qqh/obs_studio_screen_keeps_flickering_ive_tried/
+}
+
+echo "obsStudioIntelWorkaround --> uninstalls xf86-video-intel"
+echo "I've tested that this doesn't cause crashes"
+echo "and i can play some games using protonDB"
+echo " "
+
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
 }
