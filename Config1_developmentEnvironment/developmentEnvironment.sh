@@ -10,6 +10,12 @@ function webBrowsers {
 
 echo "webBroswers --> installs firefox addons and chromium"
 
+function vimLikeWebBrowsers {
+	paru -S vieb-bin
+}
+
+echo "vimLikeWebBrowsers --> uses paru to install vieb-bin"
+
 function installVimPack {
 	pacInstall vim-plugins neovim vim \
 		ttf-iosevka-nerd \
