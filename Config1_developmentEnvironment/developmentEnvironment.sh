@@ -102,6 +102,20 @@ echo "run from Config1_developmentEnvironment"
 echo "WARNING 2: will delete current alacritty config file"
 echo " "
 
+virtualMachineSetup() {
+	pacInstall virt-manager qemu-desktop 
+	pacInstall virtualbox virtualbox-guest-iso \
+		virtualbox-guest-utils \
+		virtualbox-host-modules-arch
+	LC_ALL=C lscpu | grep Virtualization
+	sudo systemctl enable libvirtd
+	sudo systemctl start libvirtd
+	sudo usermod -G libvirt -a $USER
+}
+
+echo "virtualMachineSetup --> installs virt-manager and virtualBox"
+echo " "
+
 
 function aurSetupParu {
 	git clone https://aur.archlinux.org/paru.git
