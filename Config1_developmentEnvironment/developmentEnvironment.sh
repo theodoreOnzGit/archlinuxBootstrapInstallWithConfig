@@ -102,7 +102,7 @@ echo "run from Config1_developmentEnvironment"
 echo "WARNING 2: will delete current alacritty config file"
 echo " "
 
-virtualMachineSetup() {
+virtualMachineSetup2022() {
 	sudo pacman -S iptables-nft
 	pacInstall virt-manager qemu-desktop edk2-ovmf \
 		dnsmasq libvirt
@@ -113,9 +113,11 @@ virtualMachineSetup() {
 	sudo systemctl enable libvirtd
 	sudo systemctl start libvirtd
 	sudo usermod -G libvirt -a $USER
+	echo "remember to start a qemu user session in virt-manager"
+	echo " "
 }
 
-echo "virtualMachineSetup --> installs virt-manager and virtualBox"
+echo "virtualMachineSetup2022 --> installs virt-manager and virtualBox"
 echo " "
 
 
