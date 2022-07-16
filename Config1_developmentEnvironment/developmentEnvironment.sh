@@ -103,6 +103,7 @@ echo "WARNING 2: will delete current alacritty config file"
 echo " "
 
 virtualMachineSetup() {
+	sudo pacman -S ebtables
 	pacInstall virt-manager qemu-desktop 
 	pacInstall virtualbox virtualbox-guest-iso \
 		virtualbox-guest-utils \
