@@ -5,6 +5,8 @@ bibleAppsInstall() {
 		bibletime
 }
 
+echo "bibleAppsInstall --> installs xiphos and bibletime "
+
 
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
