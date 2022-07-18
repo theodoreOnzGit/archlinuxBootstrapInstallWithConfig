@@ -202,9 +202,7 @@ function echoToBashRc {
 function autoSetupUser {
 	setupSudoUser $1
 	addGuestUser $2
-	addSimpleVimrc $1
 	addSimpleVimrc $2
-	addSimpleBashrc $1
 	addSimpleBashrc $2
 
 }
