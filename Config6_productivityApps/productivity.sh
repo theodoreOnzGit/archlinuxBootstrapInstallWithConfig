@@ -47,10 +47,25 @@ function mendeleyInstall() {
 }
 
 echo "mendeleyInstall --> installs mendeley"
+echo ""
+
+sambaInstall() {
+	pacInstall samba
+	sudo cp -i ./smb.conf /etc/samba/.
+	sudo systemctl enable smb
+	sudo systemctl start smb
+}
+
+
+echo "sambaInstall --> installs and enables samba using systemctl"
+echo "note: also copies smb.conf in the current folder to the root folder"
+echo ""
 
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
 }
+
+
 
 
 echo "pacInstall [packages] --> executes sudo pacman -S --needed --noconfirm"
