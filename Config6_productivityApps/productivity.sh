@@ -61,6 +61,14 @@ echo "sambaInstall --> installs and enables samba using systemctl"
 echo "note: also copies smb.conf in the current folder to the root folder"
 echo ""
 
+timerToolsInstall() {
+	pacInstall termdown
+}
+
+echo "timerToolsInstall --> installs stopwatches, timers etc"
+echo ""
+
+
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
 }
