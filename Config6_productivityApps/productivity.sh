@@ -68,6 +68,13 @@ timerToolsInstall() {
 echo "timerToolsInstall --> installs stopwatches, timers etc"
 echo ""
 
+bismuthInstall(){
+	paruInstall kwin-bismuth-bin
+}
+
+echo "bismuthInstall --> installs tiling window manager for kde plasma"
+echo " "
+
 
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
