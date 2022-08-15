@@ -6,7 +6,8 @@
 # this installs grub on /mnt/boot
 function coolPropPrereqsInstall() {
 	pacInstall mono cython python swig \
-		python2-six
+		python2-six p7zip python2
+	# http://www.coolprop.org/coolprop/wrappers/Csharp/index.html
 }
 
 echo "coolPropPrereqsInstall --> installs mono and etc. for "
