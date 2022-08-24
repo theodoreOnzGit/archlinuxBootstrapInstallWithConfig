@@ -9,10 +9,12 @@ installAndConfigOpensshServer() {
 	pacInstall openssh
 	sudo systemctl start sshd
 	sudo systemctl enable sshd
+	su --command "cp sshd_config /etc/ssh/sshd_config"
 }
 
 
 echo "installAndConfigOpensshServer --> installs openssh, enables and starts it"
+echo "also denies root login for sshd"
 
 installAndConfigOpensshClient(){
 	pacInstall openssh
