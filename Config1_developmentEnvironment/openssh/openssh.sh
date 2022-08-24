@@ -14,6 +14,12 @@ installAndConfigOpensshServer() {
 
 echo "installAndConfigOpensshServer --> installs openssh, enables and starts it"
 
+installAndConfigOpensshClient(){
+	pacInstall openssh
+}
+
+echo "installAndConfigOpensshClient --> installs openssh"
+
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
 }
