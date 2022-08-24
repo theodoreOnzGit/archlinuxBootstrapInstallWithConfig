@@ -19,6 +19,7 @@ installAndConfigOpensshClient(){
 }
 
 echo "installAndConfigOpensshClient --> installs openssh"
+echo "to connect, use ssh username@ipaddress and follow instructions"
 
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
