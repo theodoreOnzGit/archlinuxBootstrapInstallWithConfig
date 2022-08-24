@@ -5,14 +5,14 @@
 
 # this installs grub on /mnt/boot
 
-installAndConfigOpenssh() {
+installAndConfigOpensshServer() {
 	pacInstall openssh
 	sudo systemctl start sshd
 	sudo systemctl enable sshd
 }
 
 
-echo "installAndConfigOpenssh --> installs openssh, enables and starts it"
+echo "installAndConfigOpensshServer --> installs openssh, enables and starts it"
 
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
