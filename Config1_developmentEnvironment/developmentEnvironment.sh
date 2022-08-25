@@ -36,7 +36,8 @@ echo "installVimPack --> installs vim addons and neovim"
 
 function installNeovimPack() {
 	installVimPack
-	python3 -m pip install --user --upgrade pynvim
+	pacInstall python-pynvim
+	#python3 -m pip install --user --upgrade pynvim
 	mkdir -p ~/.config/nvim/
 	cp ./init.vim ~/.config/nvim/init.vim
 }
