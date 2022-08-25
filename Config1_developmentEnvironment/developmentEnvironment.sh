@@ -30,7 +30,6 @@ function installVimAURAddons {
 	paru -S vim-youcompleteme-git \
 		vim-gruvbox-git \
 		ttf-meslo-nerd-font-powerlevel10k --needed
-
 }
 
 echo "installVimPack --> installs vim addons and neovim"
@@ -38,7 +37,8 @@ echo "installVimPack --> installs vim addons and neovim"
 function installNeovimPack() {
 	installVimPack
 	python3 -m pip install --user --upgrade pynvim
-
+	mkdir -p ~/.config/nvim/
+	cp ./init.vim ~/.config/nvim/init.vim
 }
 echo "installNeovimPack --> installs neovim addons and neovim"
 
