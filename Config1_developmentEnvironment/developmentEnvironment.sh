@@ -121,10 +121,10 @@ echo "virtualMachineSetup2022 --> installs virt-manager and virtualBox"
 echo " "
 
 rustSetup(){
-	pacInstall rust
+	pacInstall rust 
 }
 
-echo "rustSetup --> installs rust and cargo"
+echo "rustSetup --> installs rust, cargo "
 echo " "
 
 
