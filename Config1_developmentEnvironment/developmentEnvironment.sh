@@ -120,6 +120,14 @@ virtualMachineSetup2022() {
 echo "virtualMachineSetup2022 --> installs virt-manager and virtualBox"
 echo " "
 
+rustSetup(){
+	pacInstall rust
+}
+
+echo "rustSetup --> installs rust and cargo"
+echo " "
+
+
 
 function aurSetupParu {
 	git clone https://aur.archlinux.org/paru.git
