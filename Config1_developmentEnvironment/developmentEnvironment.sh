@@ -29,11 +29,18 @@ function installVimPack {
 function installVimAURAddons {
 	paru -S vim-youcompleteme-git \
 		vim-gruvbox-git \
-		ttf-meslo-nerd-font-powerlevel10k
+		ttf-meslo-nerd-font-powerlevel10k --needed
 
 }
 
 echo "installVimPack --> installs vim addons and neovim"
+
+function installNeovimPack() {
+	installVimPack
+	python3 -m pip install --user --upgrade pynvim
+
+}
+echo "installNeovimPack --> installs neovim addons and neovim"
 
 function installPythonPack {
 	pacInstall python jupyter-notebook python2 \
