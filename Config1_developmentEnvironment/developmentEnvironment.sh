@@ -27,8 +27,8 @@ function installVimPack {
 
 
 function installVimAURAddons {
-	paru -S vim-youcompleteme-git \
-		vim-gruvbox-git \
+	paru -S vim-youcompleteme-git --needed \
+		vim-gruvbox-git --needed \
 		ttf-meslo-nerd-font-powerlevel10k --needed
 }
 
@@ -39,6 +39,7 @@ function installNeovimPack() {
 	pacInstall python-pynvim
 	#python3 -m pip install --user --upgrade pynvim
 	mkdir -p ~/.config/nvim/
+	paru -S neovim-plug
 	cp ./init.vim ~/.config/nvim/init.vim
 }
 echo "installNeovimPack --> installs neovim addons and neovim"
@@ -130,6 +131,7 @@ echo " "
 
 rustSetup(){
 	pacInstall rust 
+	cargo install cargo-watch
 }
 
 echo "rustSetup --> installs rust, cargo "
