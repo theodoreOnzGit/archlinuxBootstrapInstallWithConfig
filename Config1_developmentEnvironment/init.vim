@@ -26,3 +26,4 @@ Plug 'thomasfaingnaert/vim-lsp-ultisnips'
 call plug#end()
 
 let g:OmniSharp_server_use_net6 = 1
+" use to OmniSharpInstall to install omnisharp servers
