@@ -27,8 +27,7 @@ function installVimPack {
 
 
 function installVimAURAddons {
-	paru -S vim-youcompleteme-git --needed \
-		vim-gruvbox-git --needed \
+	paru -S vim-gruvbox-git --needed \
 		ttf-meslo-nerd-font-powerlevel10k --needed
 }
 
