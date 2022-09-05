@@ -75,6 +75,13 @@ bismuthInstall(){
 echo "bismuthInstall --> installs tiling window manager for kde plasma"
 echo " "
 
+screenKeyInstall(){
+	pacInstall screenkey
+}
+
+echo "screenKeyInstall --> installs tool to show keys on screen"
+echo " "
+
 
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
