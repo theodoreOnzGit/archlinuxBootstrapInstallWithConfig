@@ -123,6 +123,9 @@ virtualMachineSetup2022() {
 	sudo usermod -G libvirt -a $USER
 	echo "remember to start a qemu user session in virt-manager"
 	echo " "
+	echo "also, if network inactive,"
+	echo "sudo virsh net-start default"
+	echo " "
 }
 
 echo "virtualMachineSetup2022 --> installs virt-manager and virtualBox"
