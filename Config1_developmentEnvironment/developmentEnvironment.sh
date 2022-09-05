@@ -131,6 +131,16 @@ virtualMachineSetup2022() {
 echo "virtualMachineSetup2022 --> installs virt-manager and virtualBox"
 echo " "
 
+virtualOpenGL(){
+	pacInstall virglrenderer
+#https://bbs.archlinux.org/viewtopic.php?id=273546
+}
+
+opcuaCsharpPrereqs(){
+	pacInstall openssl-1.0
+}
+
+
 rustSetup(){
 	pacInstall rust 
 	cargo install cargo-watch
