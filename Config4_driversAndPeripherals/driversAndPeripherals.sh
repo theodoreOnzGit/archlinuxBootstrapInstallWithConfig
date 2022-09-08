@@ -42,6 +42,7 @@ echo "Note: I used this on AMD Raedon Vega Series card "
 
 printerCupsInstall() {
 	pacInstall cups bluez-cups
+	pacInstall system-config-printer
 	sudo systemctl start cups
 	sudo systemctl enable cups
 }
