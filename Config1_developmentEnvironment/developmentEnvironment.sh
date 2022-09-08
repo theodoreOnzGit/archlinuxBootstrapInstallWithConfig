@@ -149,6 +149,13 @@ rustSetup(){
 echo "rustSetup --> installs rust, cargo "
 echo " "
 
+xmlLSPSetupAUR(){
+	pacInstall jre-openjdk
+	paru -S lemminx
+}
+
+echo "xmlLSPSetupAUR --> installs rust, cargo "
+echo " "
 
 
 function aurSetupParu {
