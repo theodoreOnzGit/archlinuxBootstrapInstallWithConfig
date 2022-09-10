@@ -52,7 +52,7 @@ underscanFixLenovoIdeaPad3() {
 }
 
 echo " "
-echo " underscanFixLenovoIdeaPad3 --> fixes my personal ideapad 3 with HDMI-A-0"
+echo "underscanFixLenovoIdeaPad3 --> fixes my personal ideapad 3 with HDMI-A-0"
 echo " "
 
 function pacInstall {
