@@ -47,6 +47,13 @@ echo "enter the horizontal and vertical pixels to fix"
 echo "how much border to add to vertical and horizontal pixels"
 echo " "
 
+underscanFixLenovoIdeaPad3() {
+	underscanFix HDMI-A-0 115 55
+}
+
+echo " "
+echo " underscanFixLenovoIdeaPad3 --> fixes my personal ideapad 3 with HDMI-A-0"
+echo " "
 
 function pacInstall {
 	sudo pacman -S $@ --needed --noconfirm
