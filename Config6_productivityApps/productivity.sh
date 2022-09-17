@@ -1,5 +1,15 @@
 #!/bin/bash
 
+
+function networkingToolInstall {
+	pacInstall arp-scan
+}
+
+echo "\n networkingToolInstall --> installs tools for networking"
+echo "eg arp scans"
+echo "\n"
+
+
 function obsStudioInstall {
 
 	pacInstall obs-studio
