@@ -2,7 +2,7 @@
 
 
 function networkingToolInstall {
-	pacInstall arp-scan
+	pacInstall arp-scan ifconfig
 }
 
 echo "\n networkingToolInstall --> installs tools for networking"
