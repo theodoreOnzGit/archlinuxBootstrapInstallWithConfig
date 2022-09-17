@@ -7,6 +7,8 @@ function networkingToolInstall {
 
 echo "\n networkingToolInstall --> installs tools for networking"
 echo "eg arp scans"
+echo "use sudo arp-scan -l \n"
+echo "to scan all devices on local area netowrk"
 echo "\n"
 
 
