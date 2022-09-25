@@ -61,6 +61,17 @@ function mendeleyInstall() {
 echo "mendeleyInstall --> installs mendeley"
 echo ""
 
+function nvim_noplugins_latex_suite () {
+	paruInstall jabref texlive-most
+}
+echo "nvim_noplugins_latex_suite --> installs texlive and jabref"
+
+function watch_tex() {
+	latexmk -pvc -pdfdvi -synctex=1 -interaction=nonstopmode $1
+}
+echo "watch_tex --> latexmk -pvc -pdfdvi -synctex=1 -interaction=nonstopmode [yourfile]"
+echo "alias for you to use \n"
+
 sambaInstall() {
 	pacInstall samba
 	sudo cp -i ./smb.conf /etc/samba/.
