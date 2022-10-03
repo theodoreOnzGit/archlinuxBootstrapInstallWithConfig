@@ -35,7 +35,11 @@ echo "installVimPack --> installs vim addons and neovim"
 
 function installNeovimPack() {
 	installVimPack
-	pacInstall python-pynvim
+	# now xclip is used to communicate with
+	# system clipboard in GUI interface
+	# otherwise, you got to use tmux in
+	# order to copy and paste
+	pacInstall python-pynvim xclip
 	#python3 -m pip install --user --upgrade pynvim
 	mkdir -p ~/.config/nvim/
 	paru -S neovim-plug
@@ -45,7 +49,7 @@ echo "installNeovimPack --> installs neovim addons and neovim"
 
 function installPythonPack {
 	pacInstall python jupyter-notebook python2 \
-		python-pip 
+		python-pip
 }
 
 echo "installPythonPack --> installs python and jupyter notebook"
@@ -65,13 +69,13 @@ echo "installDotnetCore --> installs dotnet Core and asp dotnet core"
 
 function bashAndZshAddons {
 	pacInstall bash-completion htop ranger w3m elinks atool odt2txt ueberzug
-	pacInstall lshw 
+	pacInstall lshw
 	bashAndZshAddonsAUR
 }
 echo "bashAndZshAddons --> installs bunch of things useful for terminal"
 
 function bashAndZshAddonsAUR {
-	paru -S find-the-command --needed 
+	paru -S find-the-command --needed
 	echo "source /usr/share/doc/find-the-command/ftc.zsh" >> ~/.zshrc
 	sudo pacman -Fy
 }
@@ -85,7 +89,7 @@ echo "flatpakInstall --> installs flatpak "
 function dockerInstall() {
 	pacInstall docker
 	sudo systemctl enable docker --now
-	
+
 }
 echo "dockerInstall --> install docker"
 
@@ -142,7 +146,7 @@ opcuaCsharpPrereqs(){
 
 
 rustSetup(){
-	pacInstall rust 
+	pacInstall rust
 	cargo install cargo-watch
 }
 
@@ -177,4 +181,3 @@ function pacInstall {
 
 
 echo "pacInstall [packages] --> executes sudo pacman -S --needed --noconfirm"
-
