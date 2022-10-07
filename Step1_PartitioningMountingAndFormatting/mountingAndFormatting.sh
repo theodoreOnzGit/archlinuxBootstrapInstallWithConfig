@@ -17,15 +17,11 @@ function mountAndFormatRootPartition {
  }
 
 
-function generateFsTab {
-	genfstab -U /mnt >> /mnt/etc/fstab
-}
 
 function bootAndRootSetup {
 	rm -rf /mnt/etc/fstab
 	mountAndFormatRootPartition $1
 	mountAndFormatBootPartition $2
-	genfstab -U /mnt >> /mnt/etc/fstab
 }
 
 echo "bootAndRootSetup [/path/to/root/partition] [/path/to/boot/partition]"
@@ -37,8 +33,6 @@ function bootRootAndSwapSetup {
 	mountAndFormatRootPartition $1
 	mountAndFormatBootPartition $2
 	swapon $3
-	touch /mnt/etc/fstab
-	genfstab -U /mnt >> /mnt/etc/fstab
 }
 
 echo "bootRootAndSwapSetup [/path/to/root/partition] [/path/to/boot/partition] [/path/to/swap/partition]"
