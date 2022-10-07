@@ -59,7 +59,7 @@ echo "InstallKDE --> installs KDE-plasma and enables sddm service in systemctl"
 function InstallCinnamon {
 	InstallDrivers
 	InstallXorg
-	pacstrapInstall cinnamon firefox 
+	pacstrapInstall cinnamon firefox alacritty
 	pacstrapInstall sddm sddm-kcm
 	chrootExec "systemctl enable sddm"
 
