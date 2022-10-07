@@ -11,11 +11,14 @@ function autoInstallGrub {
 	chmod 755 grubMkconfig.sh
 	echo "grub-mkconfig -o /boot/grub/grub.cfg" >> grubMkconfig.sh
 	mv grubMkconfig.sh /mnt/root/grubMkconfig.sh
+	cp ~/grub /mnt/etc/default/grub
 	chrootExec /root/grubMkconfig.sh
 	rm -rf /mnt/root/grubMkconfig.sh
 }
 
 echo "autoInstallGrub --> installs grub onto /mnt/boot with EFI"
+echo "it copies the grub default file in the current dir"
+echo "and ensures that the grub-mkconfig uses this file \n"
 
 # https://www.atulhost.com/how-to-disable-or-enable-os-prober-from-the-grub
 function enableOSProber {
