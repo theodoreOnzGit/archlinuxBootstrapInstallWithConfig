@@ -11,7 +11,7 @@ function autoInstallGrub {
 	chmod 755 grubMkconfig.sh
 	echo "grub-mkconfig -o /boot/grub/grub.cfg" >> grubMkconfig.sh
 	mv grubMkconfig.sh /mnt/root/grubMkconfig.sh
-	cp ~/grub /mnt/etc/default/grub
+	cp ./grub /mnt/etc/default/grub
 	chrootExec /root/grubMkconfig.sh
 	rm -rf /mnt/root/grubMkconfig.sh
 }
