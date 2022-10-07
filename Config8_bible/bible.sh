@@ -1,7 +1,7 @@
 #!/bin/bash
 
 bibleAppsInstall() {
-	paruInstall xiphos \
+	paruInstall \
 		bibletime
 }
 
