@@ -49,10 +49,18 @@ echo "installNeovimPack --> installs neovim addons and neovim"
 
 function installPythonPack {
 	pacInstall python jupyter-notebook  \
-		python-pip
+		python-pip 
+
+	paru -S nodejs-nodemon
+}
+echo "installPythonPack --> installs python and jupyter notebook"
+
+function installPython2 (){
+	git clone https://aur.archlinux.org/python2.git
+	cd python2 && makepkg -si --nocheck
 }
 
-echo "installPythonPack --> installs python and jupyter notebook"
+echo "installPython2 --> installs python2 via AUR manually"
 
 function installVsCodeLatex {
 	pacInstall code texlive-most biber texlab
