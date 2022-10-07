@@ -65,7 +65,7 @@ function InstallCinnamon {
 
 }
 
-echo "InstallKDE --> installs cinnamon and enables sddm service in systemctl"
+echo "InstallCinnamon --> installs cinnamon and enables sddm service in systemctl"
 
 
 
