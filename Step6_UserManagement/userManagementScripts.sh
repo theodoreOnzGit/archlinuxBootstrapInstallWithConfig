@@ -103,9 +103,6 @@ function addSimpleVimrc {
 	echoToVimRc '" autocmd VimEnter * NERDTree | set number |set relativenumber| wincmd l | wincmd l'
 	echoToVimRc '"'
 
-	echoToVimRc 'vsplit'
-	echoToVimRc 'terminal'
-
 	cp .vimrc /mnt/root/.vimrc
 	mv .vimrc /mnt/home/$1/.vimrc
 	chrootExec "chown $1:$1 /home/$1/.vimrc"
