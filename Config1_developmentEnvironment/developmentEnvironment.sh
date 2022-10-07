@@ -48,7 +48,7 @@ function installNeovimPack() {
 echo "installNeovimPack --> installs neovim addons and neovim"
 
 function installPythonPack {
-	pacInstall python jupyter-notebook python2 \
+	pacInstall python jupyter-notebook  \
 		python-pip
 }
 
@@ -146,7 +146,8 @@ opcuaCsharpPrereqs(){
 
 
 rustSetup(){
-	pacInstall rust
+	pacInstall rustup
+	rustup default stable
 	cargo install cargo-watch
 }
 
