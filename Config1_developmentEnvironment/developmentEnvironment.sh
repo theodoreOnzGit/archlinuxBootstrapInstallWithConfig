@@ -154,12 +154,12 @@ opcuaCsharpPrereqs(){
 
 
 rustSetup(){
-	pacInstall rustup rust-analyzer
+	pacInstall rustup rust-analyzer mingw-w64
 	rustup default stable
 	cargo install cargo-watch
 }
 
-echo "rustSetup --> installs rust, cargo "
+echo "rustSetup --> installs rust, cargo and cross compilation"
 echo " "
 
 xmlLSPSetupAUR(){
