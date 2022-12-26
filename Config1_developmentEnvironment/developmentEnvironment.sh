@@ -154,7 +154,7 @@ opcuaCsharpPrereqs(){
 
 
 rustSetup(){
-	pacInstall rustup
+	pacInstall rustup rust-analyzer
 	rustup default stable
 	cargo install cargo-watch
 }
