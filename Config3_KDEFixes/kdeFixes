@@ -16,6 +16,21 @@ echo "https://forum.manjaro.org/t/add-custom-keyboard-shortcuts-from-terminal/58
 echo "ensure to look for Application Launcher in nvim"
 echo " "
 
+function fixTouchpadTapToClick {
+	su -c "touch /etc/X11/xorg.conf.d/40-libinput.conf"
+	su -c "bat ./40-libinput.conf >> /etc/X11/xorg.conf.d/40-libinput.conf"
+}
+
+echo " "
+echo "fixTouchpadTapToClick --> fixes issue where \n
+tap to click may not work well"
+echo "The command basically takes a 40-libinput.conf file \n
+in the current directory and adds it to the proper directory\n
+for xorg"
+echo "requires root password, and bat"
+echo "https://www.reddit.com/r/archlinux/comments/v1sdem/touchpad_tap_to_click_doesnt_work/"
+echo " "
+
 function obsStudioIntelWorkaround {
 	sudo pacman -Rcs xf86-video-intel
 	#https://www.reddit.com/r/artixlinux/comments/sq2qqh/obs_studio_screen_keeps_flickering_ive_tried/
