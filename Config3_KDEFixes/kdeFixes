@@ -27,7 +27,9 @@ tap to click may not work well"
 echo "The command basically takes a 40-libinput.conf file \n
 in the current directory and adds it to the proper directory\n
 for xorg"
-echo "requires root password, and bat"
+echo "requires root password, and bat \n
+and also, libinput synaptics drivers etc."
+
 echo "https://www.reddit.com/r/archlinux/comments/v1sdem/touchpad_tap_to_click_doesnt_work/"
 echo " "
 
