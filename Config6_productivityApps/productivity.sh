@@ -74,6 +74,7 @@ echo "alias for you to use \n"
 
 sambaInstall() {
 	pacInstall samba
+	mkdir /home/teddy0/Public/sambaSharedFolder
 	sudo cp -i ./smb.conf /etc/samba/.
 	sudo systemctl enable smb
 	sudo systemctl start smb
