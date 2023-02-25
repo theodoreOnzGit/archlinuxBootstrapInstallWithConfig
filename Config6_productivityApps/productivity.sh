@@ -85,6 +85,19 @@ echo "sambaInstall --> installs and enables samba using systemctl"
 echo "note: also copies smb.conf in the current folder to the root folder"
 echo ""
 
+sambaMakeDiscoverable() {
+	pacInstall avahi
+	sudo systemctl enable avahi-daemon
+	sudo systemctl start avahi-daemon
+	paruInstall wsdd
+	sudo systemctl enable wsdd
+	sudo systemctl start wsdd
+}
+
+echo "sambaMakeDiscoverable --> makes samba server easier to discover"
+echo "uses the avahi daemon and ws discovery protocol"
+echo ""
+
 timerToolsInstall() {
 	pacInstall termdown
 }
