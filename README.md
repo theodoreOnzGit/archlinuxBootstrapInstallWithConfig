@@ -1,4 +1,4 @@
-# ArchLinuxBootstrapInstall
+# ArchLinuxBootstrapInstallWithConfig
 A collection of config files and scripts to help with arch bootstrap 
 while installing arch from manjaro
 
