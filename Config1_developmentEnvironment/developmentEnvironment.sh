@@ -28,7 +28,8 @@ function installVimPack {
 
 function installVimAURAddons {
 	paru -S vim-gruvbox-git --needed \
-		ttf-meslo-nerd-font-powerlevel10k --needed
+		ttf-meslo-nerd-font-powerlevel10k --needed \
+		uctags-git --needed
 }
 
 echo "installVimPack --> installs vim addons and neovim"
