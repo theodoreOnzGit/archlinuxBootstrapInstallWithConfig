@@ -23,6 +23,8 @@ function installVimPack {
 		ttf-nerd-fonts-symbols-mono \
 	#sudo pacman -Rcs vim-coverage-highlight
 	installVimAURAddons
+	# don't ever use syntastic for python, it lags like crazy
+	sudo pacman -Rcs vim-syntastic
 }
 
 
