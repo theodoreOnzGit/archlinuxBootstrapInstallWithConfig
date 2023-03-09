@@ -11,7 +11,17 @@ function coolPropPrereqsInstall() {
 }
 
 echo "coolPropPrereqsInstall --> installs mono and etc. for "
-echo "for compiling C# compliant shared object .so files"
+echo "for compiling C# compliant shared object .so files \n"
+
+function openfoam_third_party {
+	pacInstall boost cgal fftw gcc openmpi paraview utf8cpp
+	paruInstall parmetis scotch
+}
+
+echo "openfoam_third_party --> Installs boost cgal fftw openmpi"
+echo "paraview utf8cpp from arch official repos"
+echo "and uses paru to install parmetis and scotch"
+echo "these are third party packages required for openfoam-com \n"
 
 
 function pacInstall {
@@ -20,4 +30,12 @@ function pacInstall {
 
 
 echo "pacInstall [packages] --> executes sudo pacman -S --needed --noconfirm"
+
+
+function paruInstall {
+	paru -S $@ --needed --noconfirm --sudoloop
+}
+
+
+echo "paruInstall [packages] --> executes paru -S --needed --noconfirm --sudoloop"
 
