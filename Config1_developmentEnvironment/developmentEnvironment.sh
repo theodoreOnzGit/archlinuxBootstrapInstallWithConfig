@@ -45,7 +45,7 @@ function installNeovimPack() {
 	pacInstall python-pynvim xclip
 	#python3 -m pip install --user --upgrade pynvim
 	mkdir -p ~/.config/nvim/
-	paru -S neovim-plug
+	paru -S neovim-plug nvim-packer-git
 	cp ./init.vim ~/.config/nvim/init.vim
 }
 echo "installNeovimPack --> installs neovim addons and neovim"
