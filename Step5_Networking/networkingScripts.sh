@@ -87,13 +87,14 @@ echo "systemctl enable"
 # using a reflector service
 function reflectorSetup {
 	pacstrapInstallToMnt reflector
-	echo "--country United States, Singapore, France, Germany" >> /mnt/etc/xdg/reflector/reflector.conf
+	cp reflector.conf /mnt/etc/xdg/reflector/reflector.conf
 	chrootExec "systemctl enable reflector"
+	chrootExec "systemctl enable reflector.timer"
 }
 
 echo "reflectorSetup --> installs reflector "
 echo "also adds the reflector service to autoupdate mirrors"
-echo "my specific script is United States, Singapore, France, Germany"
+echo "my specific script is United States, Singapore"
 
 function dhcpSetup {
 	pacstrapInstallToMnt dhcpcd

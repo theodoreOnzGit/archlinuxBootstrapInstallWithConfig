@@ -165,6 +165,15 @@ rustSetup(){
 echo "rustSetup --> installs rust, cargo and cross compilation"
 echo " "
 
+typstSetup(){
+	rustSetup 
+	pacInstall typst
+}
+
+echo "typstSetup --> installs typst, which is like latex but simplier
+and more modern"
+echo " "
+
 xmlLSPSetupAUR(){
 	pacInstall jre-openjdk
 	paru -S lemminx
