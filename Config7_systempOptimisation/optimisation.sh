@@ -22,7 +22,26 @@ function turnOffBell() {
 	sudo su -c 'echo "blacklist pcspkr" >> /etc/modprobe.d/nobeep.conf'
 }
 
+echo ""
 echo "turnOffBell --> turns off the system beep sound"
+
+function tuxedoControlCenter() {
+	paruInstall tuxedo-control-center-bin power-profiles-daemon
+	sudo systemctl enable power-profiles-daemon
+}
+echo ""
+echo "tuxedoControlCenter --> installs tuxedo-control-center-bin
+and power-profiles-daemon for power, fan and temperature control"
+
+function thermaldSuite() {
+	paruInstall thermald auto-cpufreq-git power-profiles-daemon
+	sudo systemctl enable power-profiles-daemon
+	sudo systemctl enable thermald
+	sudo systemctl enable auto-cpufreq
+}
+echo ""
+echo "thermaldSuite --> installs thermald
+and power-profiles-daemon for power and temperature control"
 
 overscanFixToolsInstall() {
 	pacInstall arandr
