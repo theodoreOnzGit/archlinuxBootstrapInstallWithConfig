@@ -85,6 +85,13 @@ function bashAndZshAddons {
 }
 echo "bashAndZshAddons --> installs bunch of things useful for terminal"
 
+function rustAndGoNavigationSuite {
+	pacInstall fzf ripgrep exa bat
+}
+echo ""
+echo "rustAndGoNavigationSuite --> installs rust and go tools for 
+navigation, eg. fzf ripgrep, exa and bat"
+
 function bashAndZshAddonsAUR {
 	paru -S find-the-command --needed
 	echo "source /usr/share/doc/find-the-command/ftc.zsh" >> ~/.zshrc
