@@ -66,10 +66,10 @@ function installPython2 (){
 echo "installPython2 --> installs python2 via AUR manually"
 
 function installVsCodeLatex {
-	pacInstall code texlive-most biber texlab
+	pacInstall code texlive biber texlab
 }
 
-echo "installVsCodeLatex --> installs vscode with texlive-most for latex-edits"
+echo "installVsCodeLatex --> installs vscode with texlive for latex-edits"
 
 function installDotnetCore {
 	pacInstall dotnet-runtime dotnet-sdk aspnet-runtime aspnet-targeting-pack
