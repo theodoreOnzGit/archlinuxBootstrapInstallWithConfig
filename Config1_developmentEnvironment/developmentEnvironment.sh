@@ -80,7 +80,7 @@ echo "installDotnetCore --> installs dotnet Core and asp dotnet core"
 
 function bashAndZshAddons {
 	pacInstall bash-completion htop ranger w3m elinks atool odt2txt ueberzug
-	pacInstall lshw
+	pacInstall lshw btop
 	bashAndZshAddonsAUR
 }
 echo "bashAndZshAddons --> installs bunch of things useful for terminal"
