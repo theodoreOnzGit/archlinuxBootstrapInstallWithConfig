@@ -17,10 +17,11 @@ function vimLikeWebBrowsers {
 echo "vimLikeWebBrowsers --> uses paru to install vieb-bin"
 
 function installVimPack {
-	pacInstall vim-plugins neovim vim \
+	pacInstall neovim vim \
 		ttf-iosevka-nerd \
 		ttf-jetbrains-mono \
 		ttf-nerd-fonts-symbols-mono \
+		nerd-fonts
 	#sudo pacman -Rcs vim-coverage-highlight
 	installVimAURAddons
 	# don't ever use syntastic for python, it lags like crazy
@@ -30,8 +31,7 @@ function installVimPack {
 
 function installVimAURAddons {
 	paru -S vim-gruvbox-git --needed \
-		ttf-meslo-nerd-font-powerlevel10k --needed \
-		uctags-git --needed
+		ttf-meslo-nerd-font-powerlevel10k --needed 
 }
 
 echo "installVimPack --> installs vim addons and neovim"
@@ -45,8 +45,7 @@ function installNeovimPack() {
 	pacInstall python-pynvim xclip
 	#python3 -m pip install --user --upgrade pynvim
 	mkdir -p ~/.config/nvim/
-	paru -S neovim-plug nvim-packer-git
-	cp ./init.vim ~/.config/nvim/init.vim
+	cp -ar ./nvim_files/* ~/.config/nvim/.
 }
 echo "installNeovimPack --> installs neovim addons and neovim"
 
@@ -121,8 +120,8 @@ echo "as well as tmux"
 echo " "
 
 alacrittySetup() {
-	rm -rf $HOME/.alacritty.yml
-	cp ./alacritty.yml $HOME/.alacritty.yml
+	rm -rf $HOME/.alacritty.toml
+	cp ./alacritty.toml $HOME/.alacritty.toml
 }
 
 echo "alacrittySetup --> sets up alacritty using config file in"
@@ -166,7 +165,7 @@ opcuaCsharpPrereqs(){
 rustSetup(){
 	pacInstall rustup rust-analyzer mingw-w64
 	rustup default stable
-	cargo install cargo-watch
+	cargo install cargo-watch bacon
 }
 
 echo "rustSetup --> installs rust, cargo and cross compilation"
@@ -186,7 +185,7 @@ xmlLSPSetupAUR(){
 	paru -S lemminx
 }
 
-echo "xmlLSPSetupAUR --> installs rust, cargo "
+echo "xmlLSPSetupAUR --> installs xml language server protocol LSP"
 echo " "
 
 
