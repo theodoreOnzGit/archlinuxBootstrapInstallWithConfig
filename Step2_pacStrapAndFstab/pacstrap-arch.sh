@@ -31,10 +31,12 @@ function pacstrapAndSetupZsh {
 echo "pacstrapAndSetupZsh --> installs zsh with some themes and configs"
 
 # this function pacstraps important tools, eg base-devel, git etc
+# as well as some vim
 function pacstrapTools {
 	pacstrap /mnt base-devel git github-cli --needed --noconfirm
 	pacstrap /mnt neofetch --needed --noconfirm
 	pacstrap /mnt arch-install-scripts --needed --noconfirm
+	pacstrap /mnt vim neovim tmux --needed --noconfirm
 }
 echo "pacstrapTools --> neofetch, base-devel, arch-instal scripts"
 
@@ -42,6 +44,7 @@ echo "pacstrapTools --> neofetch, base-devel, arch-instal scripts"
 function pacstrapBootTools {
 	pacstrap /mnt dosfstools ntfs-3g --needed --noconfirm
 	pacstrap /mnt os-prober grub efibootmgr --needed --noconfirm
+	pacstrap /mnt btrfs-progs --needed --noconfirm
 	# install both amd ucode and intel ucode 
 	# this is for multiboot usb
 	pacstrap /mnt amd-ucode intel-ucode --needed --noconfirm
