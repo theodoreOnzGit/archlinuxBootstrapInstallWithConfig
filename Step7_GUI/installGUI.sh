@@ -60,7 +60,7 @@ function InstallCinnamon {
 	InstallDrivers
 	InstallXorg
 	pacstrapInstall cinnamon firefox alacritty
-	pacstrapInstall sddm sddm-kcm
+	pacstrapInstall sddm sddm-kcm systemsettings
 	chrootExec "systemctl enable sddm"
 
 }
