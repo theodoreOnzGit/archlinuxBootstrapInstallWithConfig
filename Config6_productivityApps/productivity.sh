@@ -24,6 +24,20 @@ function obsStudioInstall {
 echo "obsStudioInstall --> installs obs-studio and some other"
 echo "useful packages for obs"
 
+function wacomInstall {
+
+	pacInstall wacomtablet xf86-input-wacom
+}
+
+echo "wacomInstall --> installs drivers for wacom tablet "
+
+function lazygitInstall {
+
+	pacInstall lazygit
+}
+
+echo "lazygitInstall --> installs lazygit, tui for git"
+
 function whatsappFranzInstall {
 	paruInstall franz
 }

@@ -33,6 +33,8 @@ pacman -S neofetch --needed --noconfirm
 
 # to use mkfs.fat we need dosfstools
 pacman -S dosfstools --needed --noconfirm
+# to use mkfs.btrfs we need btrfs-progs
+pacman -S btrfs-progs --needed --noconfirm
 
 # grub tools and ntfs formatter for windows partitions
 pacman -S os-prober grub efibootmgr --needed --noconfirm

@@ -27,6 +27,9 @@ function bootAndRootSetup {
 echo "bootAndRootSetup [/path/to/root/partition] [/path/to/boot/partition]"
 echo "--> to format and mount a boot and root partition"
 
+echo "mkswap [/path/to/swap/partition]"
+echo "--> to format swap partition"
+
 
 function bootRootAndSwapSetup {
 	rm -rf /mnt/etc/fstab

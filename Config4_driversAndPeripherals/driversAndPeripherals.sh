@@ -15,7 +15,7 @@ echo "linux headers and linux lts headers"
 function nvidiaInstallOpen {
 	pacInstall  nvidia-open nvidia-open-dkms \
 		nvidia-settings nvidia-utils \
-		lib32-nvidia-utils
+		lib32-nvidia-utils vulkan-nouveau
 }
 
 echo "nvidiaInstallOpen --> installs nvidia open source drivers (NOT nouveau)"
@@ -25,7 +25,7 @@ echo "Note: I used this on RTX-2060M cards"
 function nvidiaInstallClosed {
 	pacInstall  nvidia nvidia-lts \
 		nvidia-settings nvidia-utils \
-		lib32-nvidia-utils
+		lib32-nvidia-utils vulkan-nouveau
 }
 
 echo "nvidiaInstallClosed --> installs nvidia closed source drivers"
