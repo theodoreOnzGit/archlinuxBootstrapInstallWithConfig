@@ -50,17 +50,17 @@ text = "CellBackground"
 size = 14
 
 [font.bold]
-family = "MesloLGS NF"
+family = "GoMono Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "MesloLGS NF"
+family = "GoMono Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "MesloLGS NF"
+family = "GoMono Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "MesloLGS NF"
+family = "GoMono Nerd Font"
 style = "Regular"
