@@ -29,6 +29,13 @@ function chineseAdd {
 }
 echo "chineseAdd --> installs firefox chinese,fonts and adds the locale"
 
+function japaneseAdd {
+	pacInstall fcitx-mozc \
+		fcitx-configtool \ 
+		fcitx-gtk
+}
+echo "japaneseAdd --> installs firefox japanese,fonts and adds the locale"
+
 function texliveLangAdd {
 	pacInstall texlive-lang
 }
