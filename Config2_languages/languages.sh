@@ -31,8 +31,7 @@ echo "chineseAdd --> installs firefox chinese,fonts and adds the locale"
 
 function japaneseAdd {
 	pacInstall fcitx-mozc \
-		fcitx-configtool \ 
-		fcitx-gtk
+		fcitx-configtool fcitx-im 
 }
 echo "japaneseAdd --> installs firefox japanese,fonts and adds the locale"
 
