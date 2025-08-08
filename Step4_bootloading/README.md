@@ -22,7 +22,9 @@ The boot process can be summarised (ish) as:
 the boot selection menu in the UEFI-firmware settings. 
 2. look for an executable within said UEFI partition, eg GRUB
 3. GRUB will then load boot entries in its manual based on the grub.cfg file
-4. Thereafter, the rest of the boot processes will start, including 
+4. these entries consist of initramfs-linux.img files, which will need to 
+be within the grub.cfg file in order to boot.
+5. Thereafter, the rest of the boot processes will start, including 
 mounting of filesystems.
 
 
@@ -59,13 +61,67 @@ with the FAT partition mounted at /boot:
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
 ```
 
+This installs an bootloader entry at:
+
+```
+/boot/EFI/GRUB/grubx64.efi
+```
+
+in the FAT partition, otherwise known as the EFI system partition (esp)
+within the arch wiki, the file structure is simply:
+
+```
+/EFI/GRUB/grubx64.efi
+```
+
+Or with the esp:
+```
+esp/EFI/GRUB/grubx64.efi
+```
+
+This grubx64.efi is in a sense an executable which will enable one to boot 
+into whatever OS is needed. As with any OS, 
 
 
 ## Grub 
 
-To load the operating system, 
+To load the operating system, a grubx64.efi looks for a configuration 
+file within the EFI system partition (esp):
+
+```
+grub/grub.cfg
+```
 
 
+```
+esp/grub/grub.cfg
+```
+
+Within the grub.cfg, entries will be loaded as to what operating 
+systems are available to boot, and what drivers etc are available.
+
+To generate the grub.cfg, there is an executable file called 
+grub-mkconfig 
+
+```
+https://wiki.archlinux.org/title/GRUB#Generate_the_main_configuration_file
+```
+
+Wherein, you are instructed to do:
+
+```
+# grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+This basically auto-generates the grub.cfg file within 
+the esp, in this case the /boot directory. We could in theory 
+write the grub.cfg manually, but we don't deal with this given 
+the amount of headache it brings.
+
+Now, the grub.cfg will list all the boot entries needed within it.
+The boot entry you want will be the initramfs-linux.img file. 
+
+(TBC)
 
 
 
