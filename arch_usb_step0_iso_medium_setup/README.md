@@ -130,3 +130,6 @@ for this, see:
 https://wiki.archlinux.org/title/Iwd#EAP-PEAP
 ```
 
+(not quite sure how to connect this yet)
+Probably do a successful connection using iwd, and check the config file 
+then.
