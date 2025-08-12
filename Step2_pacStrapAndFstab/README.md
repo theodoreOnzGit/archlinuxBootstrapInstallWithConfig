@@ -32,6 +32,7 @@ pacstrap /mnt linux linux-lts linux-firmware base
 ## chrooting into the new install
 
 ### basic text editors
+
 To install vim and neovim
 
 ```
@@ -39,6 +40,49 @@ arch-chroot /mnt
 pacman -S vim neovim
 ```
 
+### timezone setup
+
+For Singapore Timezone,
+
+```
+ln -sf /usr/share/zoneinfo/Asia/Singapore /etc/localtime
+hwclock --systohc
+
+```
+
+### Keyboard layout, locale etc.
+
+The locales are generated using the locale-gen executable.
+The locale-gen executable looks into /etc/locale.gen in order to 
+see how to write the locale files
+
+```
+sed -i 's/#en_US.UTF-8/en_US.UTF-8/g' /etc/locale.gen
+locale-gen
+```
+
+Then to set the keyboard layout as as english US keyboard:
+	
+```
+rm -rf /etc/locale.conf
+touch /etc/locale.conf
+echo 'LANG=en_US.UTF-8' >> /etc/locale.conf
+echo 'KEYMAP=us' >> /etc/vconsole.conf
+```
+
+### root password
+
+To set the root password, use:
+```
+passwd
+```
+
+Ensure you are in the right chroot environment.
+
 ### network
+
+
+(TBC)
+
 
 
