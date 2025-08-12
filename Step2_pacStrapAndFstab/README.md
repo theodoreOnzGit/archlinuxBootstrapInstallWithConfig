@@ -79,8 +79,22 @@ passwd
 
 Ensure you are in the right chroot environment.
 
-### network
+### network and mirrors
 
+To make life less of a pain when installing, install network drivers and change to local mirrors.
+
+
+You can clone the git repo here:
+
+```
+pacman -S git
+https://github.com/theodoreOnzGit/archlinuxBootstrapInstallWithConfig
+```
+
+
+
+```
+```
 
 (TBC)
 
