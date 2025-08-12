@@ -123,6 +123,8 @@ The mirror list is here:
 
 ```
 
+Alternatively, copy the mirrorlist in the repository to /etc/pacman.d/mirrorlist
+
 (TBC)
 
 
