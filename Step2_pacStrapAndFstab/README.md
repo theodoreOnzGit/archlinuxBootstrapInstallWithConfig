@@ -91,9 +91,36 @@ pacman -S git
 https://github.com/theodoreOnzGit/archlinuxBootstrapInstallWithConfig
 ```
 
-
+The mirror list is here:
 
 ```
+##
+## Arch Linux repository mirrorlist
+## Generated on 2025-08-12
+##
+
+## Singapore
+#Server = http://mirror.aktkn.sg/archlinux/$repo/os/$arch
+#Server = https://mirror.aktkn.sg/archlinux/$repo/os/$arch
+#Server = http://mirror.sg.cdn-perfprod.com/archlinux/$repo/os/$arch
+#Server = https://mirror.sg.cdn-perfprod.com/archlinux/$repo/os/$arch
+#Server = http://sg.mirrors.cicku.me/archlinux/$repo/os/$arch
+#Server = https://sg.mirrors.cicku.me/archlinux/$repo/os/$arch
+#Server = https://download.nus.edu.sg/mirror/archlinux/$repo/os/$arch
+#Server = http://mirror.freedif.org/archlinux/$repo/os/$arch
+#Server = https://mirror.freedif.org/archlinux/$repo/os/$arch
+#Server = https://singapore.mirror.pkgbuild.com/$repo/os/$arch
+#Server = http://mirror.guillaumea.fr/archlinux/$repo/os/$arch
+#Server = https://mirror.guillaumea.fr/archlinux/$repo/os/$arch
+#Server = http://mirror.jingk.ai/archlinux/$repo/os/$arch
+#Server = https://mirror.jingk.ai/archlinux/$repo/os/$arch
+#Server = http://sg.arch.niranjan.co/$repo/os/$arch
+#Server = https://sg.arch.niranjan.co/$repo/os/$arch
+#Server = http://ossmirror.mycloud.services/os/linux/archlinux/$repo/os/$arch
+#Server = http://mirror.sg.gs/archlinux/$repo/os/$arch
+#Server = https://mirror.sg.gs/archlinux/$repo/os/$arch
+
+
 ```
 
 (TBC)
