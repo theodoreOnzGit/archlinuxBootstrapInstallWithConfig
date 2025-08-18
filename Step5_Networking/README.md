@@ -213,3 +213,53 @@ in the GUI....
 
 Now I want to disable the whole iwd thing, and move to nmcli. Not sure how to undo 
 the botching of network manager. Will have to work on that next.
+
+For now, working with network manager is good. One has to use root user to 
+access
+
+```
+/etc/NetworkManager/system-connections
+```
+
+In this file NUS.nmconnection:
+
+```
+[connection]
+id=NUS
+uuid=24fc2b82-db84-4ab1-b530-2c8ebe93473f
+type=wifi
+interface-name=wlp0s20f3
+
+[wifi]
+mode=infrastructure
+ssid=NUS
+
+[wifi-security]
+auth-alg=open
+key-mgmt=wpa-eap
+
+[802-1x]
+domain-suffix-match=auth01.nw.nus.edu.sg
+eap=peap;
+identity=my_username
+password=my_password
+phase2-auth=mschapv2
+
+[ipv4]
+method=auto
+
+[ipv6]
+addr-gen-mode=default
+method=auto
+
+[proxy]
+```
+
+Now, dealing with this PEAP wifi security has been nothing short of frustrating.
+But one thing that did seem to work as a temporary measure is to change hostname.
+
+```
+/etc/hostname
+```
+
+This sort of works sometimes, but doesn't at others..
