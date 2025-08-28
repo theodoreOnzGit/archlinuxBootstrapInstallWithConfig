@@ -93,9 +93,10 @@ The problem with this is that openmc is installed into:
 ```
 
 This puts OpenMC together with all the other programs. Which is messy 
-program management.
+program management. If I want to uninstall it, i will have to navigate 
+back to this folder and find the individual files openmc installed.
 
-I'd rather have it elsewhere.
+I'd rather have it elsewhere for neatness sake.
 
 If one wants it elsewhere, the cmake command should be:
 
@@ -127,11 +128,17 @@ This is under:
 https://wiki.archlinux.org/title/Environment_variables
 ```
 
-
-So, to add openmcbin to the path variable
+To print environment variables use:
 
 ```
-export PATH="${PATH}:$HOME/Documents/research/openmcbin
+printenv
+```
+
+
+So, to add openmcbin to the path variable:
+
+```
+export PATH="${PATH}:$HOME/Documents/research/openmcbin/bin"
 ```
 
 
