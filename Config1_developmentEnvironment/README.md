@@ -89,7 +89,15 @@ https://docs.openmc.org/en/stable/quickinstall.html
 The problem with this is that openmc is installed into:
 
 ```
-/usr/lib/bin
+/usr/local/bin
+```
+
+Other files are installed under 
+
+```
+/usr/local/include/
+/usr/local/lib/
+/usr/local/share/
 ```
 
 This puts OpenMC together with all the other programs. Which is messy 
@@ -104,19 +112,19 @@ If one wants it elsewhere, the cmake command should be:
 cmake -DCMAKE_INSTALL_PREFIX=$HOME/.local ..
 ```
 
-Let's say I want this in $HOME/Documents/research/openmcbin:
+Let's say I want this in $HOME/Documents/research/openmcfiles:
 
 ```
 git clone --recurse-submodules https://github.com/openmc-dev/openmc.git
 cd openmc
 mkdir build && cd build
-mkdir $HOME/Documents/research/openmcbin
-cmake -DCMAKE_INSTALL_PREFIX=$HOME/Documents/research/openmcbin ..
+mkdir $HOME/Documents/research/openmcfiles
+cmake -DCMAKE_INSTALL_PREFIX=$HOME/Documents/research/openmcfiles ..
 make
-sudo make install
+make install
 ```
 
-Doing this should put the binaries inside the openmcbin folder. 
+Doing this should put the binaries inside the openmcfiles folder. 
 However, you will have to run openmc from the folder.
 
 If you want to access it anywhere, you will need to add this to the path 
@@ -135,10 +143,10 @@ printenv
 ```
 
 
-So, to add openmcbin to the path variable:
+So, to add openmcfiles to the path variable:
 
 ```
-export PATH="${PATH}:$HOME/Documents/research/openmcbin/bin"
+export PATH="${PATH}:$HOME/Documents/research/openmcfiles/bin"
 ```
 
 
