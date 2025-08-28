@@ -67,3 +67,114 @@ $HOME/Documents/research
 ```
 
 
+# OpenMC
+
+With OpenMC, one normally installs using:
+
+```
+git clone --recurse-submodules https://github.com/openmc-dev/openmc.git
+cd openmc
+mkdir build && cd build
+cmake ..
+make
+sudo make install
+```
+
+Taken from:
+
+```
+https://docs.openmc.org/en/stable/quickinstall.html
+```
+
+The problem with this is that openmc is installed into:
+
+```
+/usr/lib/bin
+```
+
+This puts OpenMC together with all the other programs. Which is messy 
+program management.
+
+I'd rather have it elsewhere.
+
+If one wants it elsewhere, the cmake command should be:
+
+```
+cmake -DCMAKE_INSTALL_PREFIX=$HOME/.local ..
+```
+
+Let's say I want this in $HOME/Documents/research/openmcbin:
+
+```
+git clone --recurse-submodules https://github.com/openmc-dev/openmc.git
+cd openmc
+mkdir build && cd build
+mkdir $HOME/Documents/research/openmcbin
+cmake -DCMAKE_INSTALL_PREFIX=$HOME/Documents/research/openmcbin ..
+make
+sudo make install
+```
+
+Doing this should put the binaries inside the openmcbin folder. 
+However, you will have to run openmc from the folder.
+
+If you want to access it anywhere, you will need to add this to the path 
+variable. 
+
+This is under:
+
+```
+https://wiki.archlinux.org/title/Environment_variables
+```
+
+
+So, to add openmcbin to the path variable
+
+```
+export PATH="${PATH}:$HOME/Documents/research/openmcbin
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
