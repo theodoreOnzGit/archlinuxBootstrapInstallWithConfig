@@ -21,6 +21,37 @@ sudo powertop --auto-tune
 I've not yet figured how to set this to activate at startup. This is 
 still work in progress. I do not fully understand this yet.
 
+to automate this, as per the arch wiki:
+```
+https://wiki.archlinux.org/title/Powertop#Apply_settings
+```
 
+create a custom powertop.service file under:
 
+```
+/etc/systemd/system/powertop.service
+```
 
+In this text file:
+
+```
+[Unit]
+Description=Powertop tunings
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/powertop --auto-tune
+
+[Install]
+WantedBy=multi-user.target sleep.target
+```
+
+after that:
+
+```
+sudo systemctl enable powertop
+sudo systemctl start powertop
+```
+
+This should ensure the powertop tuning works on startup
