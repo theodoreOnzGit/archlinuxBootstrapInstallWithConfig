@@ -90,6 +90,18 @@ passphrase:
 
 Enter the appropriate password and you will be connecteied to wifi.
 
+# sharing wifi over network manager 
+
+To share wifi, follow this link:
+```
+https://wiki.archlinux.org/title/Software_access_point
+```
+
+In addition to network manager, you need to install:
+```
+sudo pacman -S dnsmasq
+```
+
 ## PEAP server 
 
 Some networks use WPA Enterprise and the EAP-PEAP protocol.
