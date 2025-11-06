@@ -55,3 +55,26 @@ sudo systemctl start powertop
 ```
 
 This should ensure the powertop tuning works on startup
+
+## Disable Touchpad
+
+Got a VERY irritating issue with touchpad activating when typing.
+
+From this topic, it seems synaptics drivers messing with lipxinput 
+drivers prevents the touchpad from deactivating when typing.
+```
+https://bbs.archlinux.org/viewtopic.php?id=292933
+```
+
+Is it okay to remove this synaptics? apparently, because it is no longer 
+actively maintained.
+
+```
+https://wiki.archlinux.org/title/Touchpad_Synaptics
+```
+
+So, to remove it 
+
+```
+sudo pacman -Rcs xf86-input-synaptics
+```
